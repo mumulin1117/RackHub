@@ -9,10 +9,6 @@ import UIKit
 
 class MarkedBalltroller: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -22,10 +18,14 @@ class MarkedBalltroller: UIViewController {
             return
         }
            
-        let naaib = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
-        self.navigationController?.pushViewController(naaib, animated: true)
+        clothFriction()
         
     }
 
+    
+    private func clothFriction()  {
+        let naaib = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
+        self.navigationController?.pushViewController(naaib, animated: true)
+    }
 }
 

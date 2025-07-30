@@ -22,13 +22,17 @@ class CueToCownell: UICollectionViewCell {
         super.awakeFromNib()
         
         ferrule.layer.cornerRadius = 13
+        hitConsistency()
+        chalkTip.clipsToBounds = true
+    }
+
+    
+    private func hitConsistency()  {
         ferrule.clipsToBounds = true
         
         
         chalkTip.layer.cornerRadius = 11
-        chalkTip.clipsToBounds = true
     }
-
 }
 
 extension UIImageView {

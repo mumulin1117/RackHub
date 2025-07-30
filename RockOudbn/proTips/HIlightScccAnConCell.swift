@@ -24,11 +24,19 @@ class HIlightScccAnConCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 10
+        shotSelection()
+        bridgeLength()
+    }
+
+    private func shotSelection()  {
         self.layer.masksToBounds = true
         
         railCushion.layer.cornerRadius = 19
+    }
+    
+    func bridgeLength() {
+        self.layer.cornerRadius = 10
+        
         railCushion.layer.masksToBounds = true
     }
-
 }

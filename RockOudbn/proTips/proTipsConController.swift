@@ -19,20 +19,21 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         pocketBlock.backgroundColor = .clear
-        pocketBlock.collectionViewLayout = UICollectionViewFlowLayout()
-        pocketBlock.register(UINib(nibName: "HIlightCConCell", bundle: nil), forCellWithReuseIdentifier: "HIlightCConCell")
+        aimingLine()
         pocketBlock.dataSource = self
         pocketReducer()
         
         
         
         pocketRattler.backgroundColor = .clear
-        pocketRattler.register(UINib(nibName: "HIlightScccAnConCell", bundle: nil), forCellWithReuseIdentifier: "HIlightScccAnConCell")
-        pocketRattler.dataSource = self
+        railTransfer() 
         
     }
     
-    
+    private func aimingLine()  {
+        pocketBlock.collectionViewLayout = UICollectionViewFlowLayout()
+        pocketBlock.register(UINib(nibName: "HIlightCConCell", bundle: nil), forCellWithReuseIdentifier: "HIlightCConCell")
+    }
     
 
     @IBAction func pocketCheater(_ sender: UIButton) {
@@ -52,12 +53,15 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     @IBAction func railRubber(_ sender: Any) {
-        let path = Homophony.gruppetto.lusingando(morendo: "")
+        let Fury = ContactPoint.footPlacement.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
     }
     
-    
+    func railTransfer()  {
+        pocketRattler.register(UINib(nibName: "HIlightScccAnConCell", bundle: nil), forCellWithReuseIdentifier: "HIlightScccAnConCell")
+        pocketRattler.dataSource = self
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == pocketBlock {
@@ -88,16 +92,16 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         if collectionView == pocketBlock {
             let uh = tableLeveling[indexPath.row]["objectBall"] as? Int  ?? 0
             
-            let pather = Homophony.intonation.lusingando(morendo: "\(uh)")
+            let pather = ContactPoint.eyeAlignment.patternPlay(routePla: "\(uh)")
             
-            self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: pather), animated: true)
+            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: pather), animated: true)
             return
         }
         let uh = artisticPooleling[indexPath.row]["frozenBall"] as? Int  ?? 0
         
-        let pather = Homophony.echappee.lusingando(morendo: "\(uh)")
+        let pather = ContactPoint.bridgeStability.patternPlay(routePla: "\(uh)")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: pather), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: pather), animated: true)
     }
     
     private var tableLeveling:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
@@ -154,7 +158,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     
     func traiufo(selegTep:Int) {
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
-        Homophony.igniteEngineTransmission(exhaustRoute: "/sditxpeubibqkoz/fnuoyba", fuelMixture: ["stunShot":selegTep,"deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
+        ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["stunShot":selegTep,"deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
             if let voiceFluency = nclaunch as? [String: Any],
                               
@@ -167,14 +171,14 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
             } else {
                
             }
-        } misfireHandler: { error in
+        } railHeight: { error in
             
         }
     }
     
     private func LAogi()  {
         
-        Homophony.igniteEngineTransmission(exhaustRoute: "/haakhzqcoocteadz/fjpcdmhtllc", fuelMixture: ["cueBall":"96984580"]) { nclaunch in
+        ContactPoint.tableSpeed(clothFriction: "/haakhzqcoocteadz/fjpcdmhtllc", ballCleanliness: ["cueBall":"96984580"]) { nclaunch in
             
             if let voiceFluency = nclaunch as? [String: Any],
                               
@@ -185,7 +189,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
             } else {
                
             }
-        } misfireHandler: { error in
+        } railHeight: { error in
             
         }
     }

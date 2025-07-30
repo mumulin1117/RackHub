@@ -19,16 +19,18 @@ class skillCoachCController: UIViewController {
     
     func breakSpeed()  {
         closedBridge.layer.cornerRadius = 75
-        
+        routePlanning()
         shotSelection.layer.cornerRadius = 10
+        
+        
+    }
+    
+    func routePlanning() {
         shotSelection.layer.masksToBounds = true
         
         
         closedBridge.layer.masksToBounds = true
-        
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         breakSpeed()
@@ -38,19 +40,18 @@ class skillCoachCController: UIViewController {
     }
     
 
-  
-//chat
+ 
     @IBAction func railBridge(_ sender: UIButton) {
-        let path = Homophony.klangfarben.lusingando(morendo: "")
+        let Fury = ContactPoint.sightPicture.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
     }
     
-    //edit
+   
     @IBAction func mechanicalBridge(_ sender: UIButton) {
-        let path = Homophony.locrianMode.lusingando(morendo: "")
+        let Fury = ContactPoint.aimingLine.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
     }
     
     
@@ -64,15 +65,20 @@ class skillCoachCController: UIViewController {
         tren?.isSelected = false
         trens?.isSelected = false
         
-        sender.isSelected = true
+       
         
+        shotSelection(sender: sender)
+    }
+    
+    func shotSelection(sender:UIButton)  {
+        sender.isSelected = true
         footPlacement.center.x = sender.center.x
     }
-    //wallent
+   
     @IBOutlet weak var shotSelection: UIView!
-    //set
+    
     @IBOutlet weak var patternPlay: UIView!
-    //follow
+   
     @IBOutlet weak var positionPlay: UIView!
     
     @IBOutlet weak var routePlanningCount: UILabel!
@@ -87,31 +93,31 @@ class skillCoachCController: UIViewController {
     
     
    @objc func touchunpToPurcha()  {
-       let path = Homophony.ziganeStyle.lusingando(morendo: "")
+       let Fury = ContactPoint.pivotPoint.patternPlay(routePla: "")
        
-       self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+       self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
     }
     
     
     @objc func touchunpToseowipha()  {
-        let path = Homophony.affettuoso.lusingando(morendo: "")
+        let Fury = ContactPoint.centerAxis.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
      }
     
     
     
     @objc func touchunFoaiudingcha()  {
-        let path = Homophony.wagnerTuba.lusingando(morendo: "")
+        let Fury = ContactPoint.ghostBall.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
      }
     
     
     @objc func fanivrnpToPurcha()  {
-        let path = Homophony.xylorimba.lusingando(morendo: "")
+        let Fury = ContactPoint.contactPoint.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
      }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -134,7 +140,7 @@ class skillCoachCController: UIViewController {
     }
     private func traiufo(selegTep:Int) {
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
-        Homophony.igniteEngineTransmission(exhaustRoute: "/fjxsllmqbhehz/griglqobgcn", fuelMixture: ["ballCleanliness":AppDelegate.overheadLight ?? 0]) { nclaunch in
+        ContactPoint.tableSpeed(clothFriction: "/fjxsllmqbhehz/griglqobgcn", ballCleanliness: ["ballCleanliness":AppDelegate.overheadLight ?? 0]) { nclaunch in
             self.view.hideToast()
             if let voiceFluency = nclaunch as? [String: Any],
                               
@@ -142,12 +148,8 @@ class skillCoachCController: UIViewController {
                 self.closedBridge.bankPool(achk:storyVibrancy[ "pocketSize"] as? String)
                 self.bridgeLength.text = storyVibrancy["breakoutBall"] as? String ?? "No name"
                 self.bridgeStability.text = storyVibrancy["pocketReducer"] as? String ?? "No brief"
-            } else {
-               
             }
-        } misfireHandler: { error in
-            
-        }
+        } railHeight: {_ in }
     }
     
 }

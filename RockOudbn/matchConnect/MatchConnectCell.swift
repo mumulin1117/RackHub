@@ -32,13 +32,22 @@ class MatchConnectCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         jointPin.layer.masksToBounds = true
-        taperType.layer.masksToBounds = true
-        leatherTip.layer.masksToBounds = true
         
-        self.layer.cornerRadius = 10
+        strokeAccuracy()
         self.clipsToBounds = true
-        hardnessRating.layer.cornerRadius = 22
+        taperHighterType()
         hardnessRating.clipsToBounds = true
     }
 
+    
+    private func strokeAccuracy() {
+        leatherTip.layer.masksToBounds = true
+        
+        self.layer.cornerRadius = 10
+    }
+    
+    func taperHighterType() {
+        taperType.layer.masksToBounds = true
+        hardnessRating.layer.cornerRadius = 22
+    }
 }

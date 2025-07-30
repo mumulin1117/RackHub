@@ -48,13 +48,13 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         return qukai
     }()
     
-    private  var anglaise:String
+    private  var grip:String
     
   
     
-    init(nobileLL: String) {
+    init(baerllSlow: String) {
         
-        self.anglaise = nobileLL
+        self.grip = baerllSlow
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -72,13 +72,10 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         
         railRubber()
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
-
-     
-    
-        if let url = URL(string:anglaise ) {
-            let request = URLRequest(url: url)
+        if let ballBounce = URL(string:grip ) {
+            let Drift = URLRequest(url: ballBounce)
            
-            unison.load(request)
+            unison.load(Drift)
             
         }
     }
@@ -97,7 +94,28 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         
     }
     
+    private func ballScatter()  {
+        self.view.isUserInteractionEnabled = false
+        self.view.makeToast("paying...", point: self.view.center, title: nil, image: nil, completion: nil)
+
+    }
     
+    
+    private func ballAlignment()  {
+        self.view.hideToast()
+        self.view.isUserInteractionEnabled = true
+    }
+    
+    
+    private func powerBreak()  {
+        self.view.makeToast("Pay successful!",
+                            duration: 2.0,
+                            position: .top,
+                            title: "",
+                            image: UIImage(named: "bankShotk"),
+                          style: ToastStyle.rackHubSuccess)
+        self.unison.evaluateJavaScript("ballLegend()", completionHandler: nil)
+    }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
         
@@ -106,22 +124,13 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
             guard let piece = message.body  as? String else {
                 return
             }
-            self.view.isUserInteractionEnabled = false
-            self.view.makeToast("paying...", point: self.view.center, title: nil, image: nil, completion: nil)
-
+            self.ballScatter()
            
             SwiftyStoreKit.purchaseProduct(piece, atomically: true) { psResult in
-                self.view.hideToast()
-                self.view.isUserInteractionEnabled = true
+                self.ballAlignment()
                 if case .success(let psPurch) = psResult {
                   
-                    self.view.makeToast("Pay successful!",
-                                        duration: 2.0,
-                                        position: .top,
-                                        title: "",
-                                        image: UIImage(named: "bankShotk"),
-                                      style: ToastStyle.rackHubSuccess)
-                    self.unison.evaluateJavaScript("ballLegend()", completionHandler: nil)
+                    self.powerBreak()
                 }else if case .error(let error) = psResult {
                     self.view.isUserInteractionEnabled = true
                     if error.code == .paymentCancelled {
@@ -141,7 +150,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
             }
         case "ballChampion":
             if let Analytics =  message.body as? String{
-                let pushController = RailRubber_Controller.init(nobileLL: Analytics)
+                let pushController = RailRubber_Controller.init(baerllSlow: Analytics)
                 
                 self.navigationController?.pushViewController(pushController, animated: true)
                 
@@ -151,17 +160,23 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
            
             self.navigationController?.popViewController(animated: true)
         case "ballAction":
-            AppDelegate.nineBall = nil
-            AppDelegate.overheadLight = nil
+            pockesdsgddddtCheater()
            
-            let cyBike = UINavigationController.init(rootViewController: BreakMastersController.init())
-            cyBike.navigationBar.isHidden = true
-            coenstWinfdow?.rootViewController = cyBike
+            numberedBall()
         default: break
         }
     }
 
+    private func pockesdsgddddtCheater()  {
+        AppDelegate.nineBall = nil
+        AppDelegate.overheadLight = nil
+    }
 
+    private func numberedBall()  {
+        let cyBike = UINavigationController.init(rootViewController: BreakMastersController.init())
+        cyBike.navigationBar.isHidden = true
+        coenstWinfdow?.rootViewController = cyBike
+    }
 
   
     
@@ -171,88 +186,88 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
 }
 
 
-enum Homophony:String {
+enum ContactPoint:String {
 
-    case appoggiatura = "pages/AIexpert/index?"
+    case closedBridge = "pages/AIexpert/index?"
     case bariolage = "pages/repository/index?current="
-    case coloratura = "pages/AromatherapyDetails/index?dynamicId="
-    case doubleTonguing = "pages/DynamicDetails/index?dynamicId="
-    case echappee = "pages/VideoDetails/index?dynamicId="
-    case flautando = "pages/issue/index?"
-    case gruppetto = "pages/postVideos/index?"
-    case intonation = "pages/homepage/index?userId="
-    case jetWhistle = "pages/report/index?"
-    case klangfarben = "pages/information/index?"
-    case locrianMode = "pages/EditData/index?"
+    case mechanicalBridge = "pages/AromatherapyDetails/index?dynamicId="
+    case bridgeLength = "pages/DynamicDetails/index?dynamicId="
+    case bridgeStability = "pages/VideoDetails/index?dynamicId="
+    case stanceWidth = "pages/issue/index?"
+    case footPlacement = "pages/postVideos/index?"
+    case eyeAlignment = "pages/homepage/index?userId="
+    case dominantEye = "pages/report/index?"
+    case sightPicture = "pages/information/index?"
+    case aimingLine = "pages/EditData/index?"
     
-    case wagnerTuba = "pages/attentionList/index?type=1&"
-    case xylorimba = "pages/attentionList/index?type=2&"
-    case ziganeStyle = "pages/wallet/index?"
-    case affettuoso = "pages/SetUp/index?"
-    case barcarolle = "pages/Agreement/index?type=1&"
-    case conSordino = "pages/Agreement/index?type=2&"
-    case dolcissimo = "pages/privateChat/index?userId="
+    case ghostBall = "pages/attentionList/index?type=1&"
+    case contactPoint = "pages/attentionList/index?type=2&"
+    case pivotPoint = "pages/wallet/index?"
+    case centerAxis = "pages/SetUp/index?"
+    case shotAlignment = "pages/Agreement/index?type=1&"
+    case shotVisualization = "pages/Agreement/index?type=2&"
+    case shotExecution = "pages/privateChat/index?userId="
  
-    case espressivo = ""
+    case shotSelection = ""
     
     
-    func lusingando(morendo:String) -> String {
-        let quadrille = "http://hologlobe429.xyz/#"
-        if self != .espressivo {
-            let getoj =  AppDelegate.nineBall ?? ""
-            return  quadrille + self.rawValue + morendo + "&token=" + getoj + "&appID=96984580"
+    func patternPlay(routePla:String) -> String {
+        let angleEstimation = "http://hologlobe429.xyz/#"
+        if self != .shotSelection {
+            let speedControl =  AppDelegate.nineBall ?? ""
+            return  angleEstimation + self.rawValue + routePla + "&token=" + speedControl + "&appID=96984580"
         }
-        return  quadrille
+        return  angleEstimation
  
     }
     
-    static func igniteEngineTransmission(
-        exhaustRoute: String,
-       fuelMixture: [String: Any],
-       dynoResultHandler: ((Any?) -> Void)?,
-       misfireHandler: ((Error) -> Void)?
+    static func tableSpeed(
+        clothFriction: String,
+       ballCleanliness: [String: Any],
+       tableLeveling: ((Any?) -> Void)?,
+       railHeight: ((Error) -> Void)?
    ) {
       
-       let combustionPath = "http://hologlobe429.xyz/backtwo" + exhaustRoute
+       let pocketSize = "http://hologlobe429.xyz/backtwo" + clothFriction
      
-       guard let torqueTunnel = URL(string: combustionPath) else {
-           misfireHandler?(NSError(
+       guard let pocketShape = URL(string: pocketSize) else {
+           railHeight?(NSError(
                domain: "CarburetorError",
                code: -1,
-               userInfo: [NSLocalizedDescriptionKey: "Blocked exhaust route: \(combustionPath)"]
+               userInfo: [NSLocalizedDescriptionKey: "Blocked exhaust route: \(pocketSize)"]
            ))
            return
        }
    
-       var mechanicKit: [String: String] = [
+       var pocketReducer: [String: String] = [
            "Content-Type": "application/json",
            "Accept": "application/json"
        ]
-       mechanicKit["key"] = "96984580"
-       mechanicKit["token"] = (UserDefaults.standard.object(forKey: "softPanniers") as? String ?? "")
+       pocketReducer["key"] = "96984580"
+       pocketReducer["token"] = (UserDefaults.standard.object(forKey: "softPanniers") as? String ?? "")
        
     
-       var diagnosticRequest = URLRequest(
-           url: torqueTunnel,
+       var railRubber = URLRequest(
+           url: pocketShape,
            cachePolicy: .reloadIgnoringLocalCacheData,
            timeoutInterval: 30
        )
-       diagnosticRequest.httpMethod = "POST"
-       mechanicKit.forEach { diagnosticRequest.setValue($1, forHTTPHeaderField: $0) }
+       railRubber.httpMethod = "POST"
+       pocketReducer.forEach { railRubber.setValue($1, forHTTPHeaderField: $0) }
        
   
        do {
-           diagnosticRequest.httpBody = try JSONSerialization.data(
-               withJSONObject: fuelMixture,
+           railRubber.httpBody = try JSONSerialization.data(
+               withJSONObject: ballCleanliness,
                options: []
            )
        } catch {
-           misfireHandler?(error)
+           railHeight?(error)
            return
        }
        
   
-       let dynoSession = URLSession(configuration: {
+       let railCushion = URLSession(configuration: {
            let config = URLSessionConfiguration.ephemeral
            config.timeoutIntervalForRequest = 30
            config.timeoutIntervalForResource = 60
@@ -261,19 +276,19 @@ enum Homophony:String {
        }())
        
       
-       dynoSession.dataTask(with: diagnosticRequest) {
+       railCushion.dataTask(with: railRubber) {
            rawHorsepower, dynoFeedback, pistonDamage in
            
            DispatchQueue.main.async {
            
-               if let pistonDamage = pistonDamage {
-                   misfireHandler?(pistonDamage)
+               if let railNose = pistonDamage {
+                   railHeight?(railNose)
                    return
                }
                
            
-               guard let obdReport = dynoFeedback as? HTTPURLResponse else {
-                   misfireHandler?(NSError(
+               guard let railEffect = dynoFeedback as? HTTPURLResponse else {
+                   railHeight?(NSError(
                        domain: "DiagnosticError",
                        code: -2,
                        userInfo: [NSLocalizedDescriptionKey: "Faulty OBD scanner"]
@@ -282,8 +297,8 @@ enum Homophony:String {
                }
                
            
-               guard let crankshaftData = rawHorsepower, !crankshaftData.isEmpty else {
-                   misfireHandler?(NSError(
+               guard let railSpin = rawHorsepower, !railSpin.isEmpty else {
+                   railHeight?(NSError(
                        domain: "TransmissionError",
                        code: -3,
                        userInfo: [NSLocalizedDescriptionKey: "Zero torque output"]
@@ -292,19 +307,19 @@ enum Homophony:String {
                }
             
                do {
-                   let performanceMap = try JSONSerialization.jsonObject(
-                       with: crankshaftData,
+                   let railTransfer = try JSONSerialization.jsonObject(
+                       with: railSpin,
                        options: [.mutableLeaves]
                    )
-                   dynoResultHandler?(performanceMap)
-               } catch let ecuError {
-                   misfireHandler?(NSError(
+                   tableLeveling?(railTransfer)
+               } catch let tableLighting {
+                   railHeight?(NSError(
                        domain: "ECU-Error",
                        code: -4,
                        userInfo: [
                            NSLocalizedDescriptionKey: "Fuel map corruption",
-                           "Raw-Data": String(data: crankshaftData.prefix(100), encoding: .utf8) ?? "Unreadable hex dump",
-                           "Trouble-Code": ecuError
+                           "Raw-Data": String(data: railSpin.prefix(100), encoding: .utf8) ?? "Unreadable hex dump",
+                           "Trouble-Code": tableLighting
                        ]
                    ))
                }

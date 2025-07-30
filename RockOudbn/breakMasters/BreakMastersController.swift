@@ -67,7 +67,7 @@ class BreakMastersController: UIViewController {
         
 
         self.view.makeToast("Log in...", point: self.view.center, title: nil, image: nil, completion: nil)
-        Homophony.igniteEngineTransmission(exhaustRoute: "/gjelshvxoezz/aqnvhop", fuelMixture: ["straightPool":email,"rotationGame":password,"onePocket":"96984580"]) { nclaunch in
+        ContactPoint.tableSpeed(clothFriction: "/gjelshvxoezz/aqnvhop", ballCleanliness: ["straightPool":email,"rotationGame":password,"onePocket":"96984580"]) { nclaunch in
             if let voiceFluency = nclaunch as? [String: Any],
                               
                 let storyVibrancy = voiceFluency["data"] as? [String: Any] {
@@ -93,7 +93,7 @@ class BreakMastersController: UIViewController {
                                     style: ToastStyle.rackHubAnalysis)
                 
             }
-        } misfireHandler: { error in
+        } railHeight: { error in
             self.view.makeToast(error.localizedDescription,
                                 duration: 2.0,
                                 position: .center,
@@ -127,17 +127,17 @@ class BreakMastersController: UIViewController {
      }
     
     @objc private func openPrivacy() {
-        let path = Homophony.barcarolle.lusingando(morendo: "")
+        let ballFury = ContactPoint.shotAlignment.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: ballFury), animated: true)
       
     }
 
     
     @objc private func openTerms() {
-        let path = Homophony.conSordino.lusingando(morendo: "")
+        let Fury = ContactPoint.shotVisualization.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(nobileLL: path), animated: true)
+        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
       
     }
     
