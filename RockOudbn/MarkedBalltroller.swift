@@ -30,7 +30,7 @@ class MarkedBalltroller: UIViewController {
 
     
     private func clothFriction()  {
-        let naaib = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
+        let naaib = UIStoryboard(name: "Mbavirn".englishSpin(), bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
         UIKitlael.text = "Hello, ROCKHUD!"
         self.navigationController?.pushViewController(naaib, animated: true)
     }

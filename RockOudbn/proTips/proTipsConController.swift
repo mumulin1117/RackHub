@@ -174,12 +174,12 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         zhiawu.translatesAutoresizingMaskIntoConstraints = false
         self.tapvaige = zhiawu
         
-        self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
+        self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["stunShot":selegTep,"deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
             if let voiceFluency = nclaunch as? [String: Any],
                               
-                let storyVibrancy = voiceFluency["data"] as? Array<[String: Any]>  {
+                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
                 self.artisticPooleling = storyVibrancy.filter({ erls in
                     return  (erls["footPlacement"] as? String) != nil
                 })
@@ -203,7 +203,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
             self.tapvaige = zhiawu
             if let voiceFluency = nclaunch as? [String: Any],
                               
-                let storyVibrancy = voiceFluency["data"] as? Array<[String: Any]>  {
+                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
                 self.tableLeveling = storyVibrancy
                
                 self.reoalofShiwe(Bi:true)

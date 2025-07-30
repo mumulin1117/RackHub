@@ -6,8 +6,13 @@
 //
 
 import UIKit
-
+extension UIViewController{
+    func dratma() -> String {
+        return "diaktta".englishSpin()
+    }
+}
 class skillCoachCController: UIViewController {
+    
     
    
     @IBOutlet weak var closedBridge: UIImageView!
@@ -146,7 +151,7 @@ class skillCoachCController: UIViewController {
        
         moreSconced.text = "Auto Layout "
         
-        self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
+        self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         moreSconced.translatesAutoresizingMaskIntoConstraints = false
        
         ContactPoint.tableSpeed(clothFriction: "/fjxsllmqbhehz/griglqobgcn", ballCleanliness: ["ballCleanliness":AppDelegate.overheadLight ?? 0]) { nclaunch in
@@ -158,14 +163,14 @@ class skillCoachCController: UIViewController {
             self.view.hideToast()
             if let voiceFluency = nclaunch as? [String: Any],
                               
-                let storyVibrancy = voiceFluency["data"] as? [String: Any]{
+                let storyVibrancy = voiceFluency[self.dratma()] as? [String: Any]{
                 let alltu = self.generateMaintenanceTip()
                 if alltu.count > 4 {
                     self.closedBridge.bankPool(achk:storyVibrancy[ "pocketSize"] as? String)
                 }
                 
-                self.bridgeLength.text = storyVibrancy["breakoutBall"] as? String ?? "No name"
-                self.bridgeStability.text = storyVibrancy["pocketReducer"] as? String ?? "No brief"
+                self.bridgeLength.text = storyVibrancy["breakoutBall"] as? String ?? "Nsox fniatmme".englishSpin()
+                self.bridgeStability.text = storyVibrancy["pocketReducer"] as? String ?? "Nrox nbzraiweef".englishSpin()
             }
         } railHeight: {_ in }
     }

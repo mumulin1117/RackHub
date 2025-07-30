@@ -82,19 +82,19 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
         zhiawu.setTitle("Tap", for: .normal)
         zhiawu.translatesAutoresizingMaskIntoConstraints = false
         self.tapvaige = zhiawu
-        self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
+        self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
             if let voiceFluency = nclaunch as? [String: Any],
                               
-                let storyVibrancy = voiceFluency["data"] as? Array<[String: Any]>  {
+                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
                 self.tableLeveling = storyVibrancy.filter({ erls in
                     return  (erls["footPlacement"] as? String) == nil
                 })
                 self.reoalofShiwe(Bi: true)
                
             } else {
-                self.view.makeToast("Unexpected response format.",
+                self.view.makeToast("Uanbecxcpzedcntuecdl krveyscpeofnwsaej wfqotrbmuaftb.".englishSpin(),
                                     duration: 2.0,
                                     position: .center,
                                     title: "",

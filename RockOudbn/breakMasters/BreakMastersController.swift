@@ -38,7 +38,7 @@ class BreakMastersController: UIViewController {
         zhiawu.translatesAutoresizingMaskIntoConstraints = false
         self.tapvaige = zhiawu
         guard let email = throwAngle.text, !email.isEmpty else {
-            self.view.makeToast("Please enter your email first",
+            self.view.makeToast("Pllceaabsseu iepnptaehrh oyroouuro oermbariolt wfvisrgsst".englishSpin(),
                                 duration: 2.0,
                                 position: .center,
                                 title: "",
@@ -49,7 +49,7 @@ class BreakMastersController: UIViewController {
                       
                 
         guard let password = cutAngle.text, !password.isEmpty else {
-            self.view.makeToast("Please enter your password first",
+            self.view.makeToast("Ptlbekaosqeh qehnxtxekrf syroluhrq ypxazssscwkonrbdl bfxicrwszt".englishSpin(),
                                 duration: 2.0,
                                 position: .center,
                                 title: "",
@@ -60,7 +60,7 @@ class BreakMastersController: UIViewController {
         }
                       
         guard isAgreed else {
-            self.view.makeToast("Please read and agree to our privacy policy and terms first",
+            self.view.makeToast("Pxljebawsceb prjemabdm maznvdb qangcrdefeb gtmok cowuyrc vpfrtixvbaecdyf mpuowlsincfyy uagnkdv ntdetrcmisl bfqimrwsjt".englishSpin(),
                                 duration: 2.0,
                                 position: .center,
                                 title: "",
@@ -71,17 +71,17 @@ class BreakMastersController: UIViewController {
         }
         
 
-        self.view.makeToast("Log in...", point: self.view.center, title: nil, image: nil, completion: nil)
+        self.view.makeToast("Lloggv himnk.a.o.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         ContactPoint.tableSpeed(clothFriction: "/gjelshvxoezz/aqnvhop", ballCleanliness: ["straightPool":email,"rotationGame":password,"onePocket":"96984580"]) { nclaunch in
             if let voiceFluency = nclaunch as? [String: Any],
                               
-                let storyVibrancy = voiceFluency["data"] as? [String: Any] {
+                let storyVibrancy = voiceFluency[self.dratma()] as? [String: Any] {
                 
                 self.view.hideToast()
                 AppDelegate.nineBall = storyVibrancy["nineBall"] as? String
                 AppDelegate.overheadLight = storyVibrancy["overheadLight"] as? Int
                 self.reoalofShiwe(Bi:true)
-                self.view.makeToast("Log in successfully",
+                self.view.makeToast("Looxge fixni pscudchczersuspfyuilzlsy".englishSpin(),
                                     duration: 2.0,
                                     position: .top,
                                     title: "",
@@ -89,7 +89,7 @@ class BreakMastersController: UIViewController {
                                   style: ToastStyle.rackHubSuccess)
                 
             } else {
-                self.view.makeToast("Unexpected response format.",
+                self.view.makeToast("Uanbecxcpzedcntuecdl krveyscpeofnwsaej wfqotrbmuaftb.".englishSpin(),
                                     duration: 2.0,
                                     position: .center,
                                     title: "",
@@ -111,7 +111,7 @@ class BreakMastersController: UIViewController {
     }
     func reoalofShiwe(Bi:Bool)  {
         if Bi {
-            let naaib = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
+            let naaib = UIStoryboard(name: "Mbavirn".englishSpin(), bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
             self.navigationController?.pushViewController(naaib, animated: true)
         }
     }

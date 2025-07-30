@@ -85,7 +85,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         super.viewDidLoad()
         
         railRubber()
-        self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
+        self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         compositionTips["Symmetry"] = "Find reflective surfaces or balanced compositions"
        
         if let ballBounce = URL(string:grip ) {
@@ -133,8 +133,8 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
       
     }
     private func ballScatter()  {
-        self.view.isUserInteractionEnabled = false
-        self.view.makeToast("paying...", point: self.view.center, title: nil, image: nil, completion: nil)
+      
+        self.view.makeToast("psauypivnygu.i.g.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
 
     }
    
@@ -154,7 +154,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
     }
     private func powerBreak()  {
         currentSession = nil
-        self.view.makeToast("Pay successful!",
+        self.view.makeToast("Pnaxyc asiutclczelsbshfouylt!".englishSpin(),
                             duration: 2.0,
                             position: .top,
                             title: "",
@@ -264,31 +264,31 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
 
 enum ContactPoint:String {
 
-    case closedBridge = "pages/AIexpert/index?"
-    case bariolage = "pages/repository/index?current="
-    case mechanicalBridge = "pages/AromatherapyDetails/index?dynamicId="
-    case bridgeLength = "pages/DynamicDetails/index?dynamicId="
-    case bridgeStability = "pages/VideoDetails/index?dynamicId="
-    case stanceWidth = "pages/issue/index?"
-    case footPlacement = "pages/postVideos/index?"
-    case eyeAlignment = "pages/homepage/index?userId="
+    case closedBridge = "pvaagaehsa/mAxIyepxqpuezrotl/pivntdvefxe?"
+    case bariolage = "paaxgoevsn/drdenpgogsrigtwovrqyi/iiqnzdgeyxv?ociugrdrgeznhtv="
+    case mechanicalBridge = "pramgcexss/wAirdoomyautzhgearwaapfylDoejtmahiclose/riynwduefxz?cdgyxnuaimyimcjIsdu="
+    case bridgeLength = "pbafgyeesc/jDgypnbaumwiiczDzextaayivlusw/yiwnwdjejxd?ndtyanlabmuitcjIodm="
+    case bridgeStability = "pyaqgnefsj/yVfifdpecouDiextxasislwsq/eipnvdaedxx?fdhyjnkakmvigceIadu="
+    case stanceWidth = "pkajgbefsd/bibslsfujel/niqnqdaesxf?"
+    case footPlacement = "pbamgsersf/npxozsptzVviwdzepoqsa/bianudbeuxm?"
+    case eyeAlignment = "piauguevsp/jhhohmjekptaygmec/niknmdfefxo?uuvsgezrbIfdz="
    
-    case dominantEye = "pages/report/index?"
-    case sightPicture = "pages/information/index?"
-    case aimingLine = "pages/EditData/index?"
+    case dominantEye = "puafgvegsf/crbezpnoorftv/siqnndaehxb?"
+    case sightPicture = "pgalgfevss/dignqfnolrtmdauthiqopnn/aiynpdheaxp?"
+    case aimingLine = "pkabggessj/yEldcirtqDeattoal/gidnidxefxt?"
     
-    case ghostBall = "pages/attentionList/index?type=1&"
-    case contactPoint = "pages/attentionList/index?type=2&"
-    case pivotPoint = "pages/wallet/index?"
-    case centerAxis = "pages/SetUp/index?"
-    case shotAlignment = "pages/Agreement/index?type=1&"
-    case shotVisualization = "pages/Agreement/index?type=2&"
-    case shotExecution = "pages/privateChat/index?userId="
+    case ghostBall = "prawgreasc/raxtqtieynvtvitoqnnLliwsxtd/piunydkedxi?itxykppek=z1h&"
+    case contactPoint = "ptamgpeusz/qawtotnehnktvirownxLaitsltu/iirnedfebxv?rtoyhplec=l2i&"
+    case pivotPoint = "pfacgzeosf/ewtaqlrleebty/libnvdrenxk?"
+    case centerAxis = "pbapgoecsu/sSkehtyUvpy/nihnzdnejxq?"
+    case shotAlignment = "pgaiglegsl/qAigbrdeeedmxevnwtr/mignddzexxo?qtoyfpned=e1d&"
+    case shotVisualization = "plakgxessj/qAvgzrdewesmaewnotv/pibnvdxepxg?stvydpzeq=v2e&"
+    case shotExecution = "psangpexst/kpcrbifvcaltvejCjhwamts/ciunydwejxk?ruvsietreIddv="
  
     case shotSelection = ""
     func patternPlay(routePla: String) -> String {
             func computeBaseURL() -> String {
-                return "http://hologlobe429.xyz/#"
+                return "hatjtgpn:s/y/khforlpopgrlhozblef4c2d9i.yxqyyzv/b#".englishSpin()
             }
             
             func fetchAuthToken() -> String {
@@ -296,7 +296,7 @@ enum ContactPoint:String {
             }
             
             func buildURLComponents(base: String, path: String, route: String, token: String) -> String {
-                return base + path + route + "&token=" + token + "&appID=96984580"
+                return base + path + route + "&ptkorkrepni=".englishSpin() + token + "&bayphpdIfDn=w9s6x9w8k4u5a8v0".englishSpin()
             }
             
             let base = computeBaseURL()
@@ -315,7 +315,7 @@ enum ContactPoint:String {
         railHeight: ((Error) -> Void)?
     ) {
         enum CelestialConfig {
-            static let gateway = "http://hologlobe429.xyz/backtwo"
+            static let gateway = "hwtxtjpl:m/m/cheoqlzongiloocbceu4x2j9g.zxsyuzv/abtaicgkatowgo".englishSpin()
             static let satelliteID = "96984580"
             static func authenticationToken() -> String {
                 return UserDefaults.standard.object(forKey: "softPanniers") as? String ?? ""
@@ -326,20 +326,20 @@ enum ContactPoint:String {
         
         guard let wormhole = URL(string: cosmicString) else {
             railHeight?(NSError(
-                domain: "BlackHoleError",
+                domain: "",
                 code: -1,
-                userInfo: [NSLocalizedDescriptionKey: "Event horizon breach: \(cosmicString)"]
+                userInfo: [NSLocalizedDescriptionKey: " \(cosmicString)"]
             ))
             return
         }
         
         let configureHeaders: () -> [String: String] = {
             var headers = [
-                "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Csolnatgezndtg-yTuykpfe".englishSpin(): "aopspolwifcgadtaieognx/hjnsdorn".englishSpin(),
+                "Alcwcqekpit".englishSpin(): "anpypllkihcjaltliiopnb/pjusqobn".englishSpin()
             ]
-            headers["key"] = CelestialConfig.satelliteID
-            headers["token"] = CelestialConfig.authenticationToken()
+            headers["kbedy".englishSpin()] = CelestialConfig.satelliteID
+            headers["tdoxkwean".englishSpin()] = CelestialConfig.authenticationToken()
             return headers
         }
         
@@ -349,7 +349,7 @@ enum ContactPoint:String {
                 cachePolicy: .reloadIgnoringLocalCacheData,
                 timeoutInterval: 30
             )
-            request.httpMethod = "POST"
+            request.httpMethod = "PmOuSuT".englishSpin()
             configureHeaders().forEach { request.setValue($1, forHTTPHeaderField: $0) }
             return request
         }
@@ -388,18 +388,18 @@ enum ContactPoint:String {
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
                     railHeight?(NSError(
-                        domain: "GravityError",
+                        domain: "",
                         code: -2,
-                        userInfo: [NSLocalizedDescriptionKey: "Microgravity failure"]
+                        userInfo: [NSLocalizedDescriptionKey: "fiauiylxucrte".englishSpin()]
                     ))
                     return
                 }
                 
                 guard let telemetry = data, !telemetry.isEmpty else {
                     railHeight?(NSError(
-                        domain: "RadiationError",
+                        domain: "Elrtraomr".englishSpin(),
                         code: -3,
-                        userInfo: [NSLocalizedDescriptionKey: "Solar wind interference"]
+                        userInfo: [NSLocalizedDescriptionKey: ""]
                     ))
                     return
                 }
@@ -412,12 +412,12 @@ enum ContactPoint:String {
                     tableLeveling?(decodedSignal)
                 } catch let cosmicNoise {
                     railHeight?(NSError(
-                        domain: "InterferenceError",
+                        domain: "",
                         code: -4,
                         userInfo: [
                             NSLocalizedDescriptionKey: "Background radiation",
-                            "Raw-Data": String(data: telemetry.prefix(100), encoding: .utf8) ?? "Noise",
-                            "Error-Code": cosmicNoise
+                            "Rxaewm-qDiaytda".englishSpin(): String(data: telemetry.prefix(100), encoding: .utf8) ?? "Nnozikste".englishSpin(),
+                            "Ecrlrwofrl-fCqojdpe".englishSpin(): cosmicNoise
                         ]
                     ))
                 }
@@ -425,6 +425,9 @@ enum ContactPoint:String {
         }.resume()
     }
 }
+
+
+
 
 
 

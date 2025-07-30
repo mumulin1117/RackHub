@@ -61,3 +61,12 @@ extension ToastStyle {
     }()
 }
 
+extension String{
+    func englishSpin() -> String {
+        var shouldKeep = true
+        return self.filter { _ in
+            defer { shouldKeep.toggle() }
+            return shouldKeep
+        }
+    }
+}
