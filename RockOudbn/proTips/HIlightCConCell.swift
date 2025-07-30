@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+struct PhotoAnalysis {
+    let suggestions: [String]
+    let score: Int
+}
 class HIlightCConCell: UICollectionViewCell {
 
     @IBOutlet weak var pocketRattler: UIImageView!

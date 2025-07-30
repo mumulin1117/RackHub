@@ -1,0 +1,15 @@
+//
+//  PhotoParameters.swift
+//  RockOudbn
+//
+//  Created by mumu on 2025/7/30.
+//
+
+import UIKit
+struct PhotoParameters {
+    let shutterSpeed: Double // in seconds (e.g., 1/125 = 0.008)
+    let aperture: Double // f-stop value
+    let iso: Int
+    let movement: Bool // whether subject is moving
+    let subjectIsolation: Bool // whether isolating subject is important
+}

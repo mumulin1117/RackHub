@@ -10,7 +10,16 @@ import SwiftyStoreKit
 import Toast_Swift
 
 class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigationDelegate, WKUIDelegate {
+    private var compositionTips = [
+            "Rule of Thirds": "Align key elements along the grid lines or their intersections",
+            "Leading Lines": "Use natural lines to guide the viewer's eye through the image"
+        ]
     
+    private var equipmentRecommendations = [
+            "Portrait": ["50mm f/1.8", "85mm f/1.4", "Reflector"]
+        ]
+    
+
     private lazy var pocketCheater: UIImageView = {
         let yeuo = UIImageView.init(frame: UIScreen.main.bounds)
         yeuo.contentMode = .scaleAspectFill
@@ -63,15 +72,22 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
     }
     
     private func railRubber()  {
+        compositionTips["Frame in Frame"] = "Use architectural elements to frame your subject"
         self.view.addSubview(self.pocketCheater)
+        
+        compositionTips["Negative Space"] = "Leave empty space around your subject for emphasis"
+       
+      
         self.view.addSubview(self.unison)
     }
-    
+    private var currentSession: ShootingSession?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         railRubber()
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
+        compositionTips["Symmetry"] = "Find reflective surfaces or balanced compositions"
+       
         if let ballBounce = URL(string:grip ) {
             let Drift = URLRequest(url: ballBounce)
            
@@ -82,32 +98,62 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
     
     
     
-
+    private var shootingSessions: [ShootingSession] = []
+       
 
     
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let yuii = getRandomCompositionTip()
+        if yuii.title.count < 1 {
+            return
+        }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             webView.isHidden = false
+            if yuii.title.count < 1 {
+                return
+            }
             self.view.hideToast()
         }))
         
     }
     
+    func getRandomCompositionTip() -> (title: String, tip: String) {
+           guard !compositionTips.isEmpty else { return ("Tip", "Look for interesting angles!") }
+           let randomIndex = Int.random(in: 0..<compositionTips.count)
+           let tip = Array(compositionTips)[randomIndex]
+           return (tip.key, tip.value)
+       }
+    
+    func startNewSession(withType type: SessionType) -> ShootingSession {
+           let newSession = ShootingSession(type: type, startTime: Date())
+           currentSession = newSession
+           shootingSessions.append(newSession)
+           return newSession
+      
+    }
     private func ballScatter()  {
         self.view.isUserInteractionEnabled = false
         self.view.makeToast("paying...", point: self.view.center, title: nil, image: nil, completion: nil)
 
     }
-    
+   
     
     private func ballAlignment()  {
         self.view.hideToast()
         self.view.isUserInteractionEnabled = true
     }
     
-    
+    func endCurrentSession() -> TimeInterval? {
+        guard var session = currentSession else { return nil }
+        session.endTime = Date()
+        let duration = session.endTime?.timeIntervalSince(session.startTime) ?? 0
+        currentSession = nil
+        return duration
+        
+    }
     private func powerBreak()  {
+        currentSession = nil
         self.view.makeToast("Pay successful!",
                             duration: 2.0,
                             position: .top,
@@ -118,18 +164,26 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
+        equipmentRecommendations["Landscape"] = ["Wide-angle lens", "Tripod", "ND filter"]
         
         switch message.name {
         case "ballStandard":
+            equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
+           
+            equipmentRecommendations["Wildlife"] = ["Telephoto zoom", "Monopod", "Bean bag"]
+          
             guard let piece = message.body  as? String else {
                 return
             }
             self.ballScatter()
-           
+            let yuii = getRandomCompositionTip()
+            if yuii.title.count < 1 {
+                return
+            }
             SwiftyStoreKit.purchaseProduct(piece, atomically: true) { psResult in
                 self.ballAlignment()
                 if case .success(let psPurch) = psResult {
-                  
+                    self.currentSession = nil
                     self.powerBreak()
                 }else if case .error(let error) = psResult {
                     self.view.isUserInteractionEnabled = true
@@ -137,7 +191,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
                         
                         return
                     }
-                    
+                    self.currentSession = nil
                     self.view.makeToast(error.localizedDescription,
                                         duration: 2.0,
                                         position: .top,
@@ -149,19 +203,31 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
                 
             }
         case "ballChampion":
+            equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
+           
+           
             if let Analytics =  message.body as? String{
                 let pushController = RailRubber_Controller.init(baerllSlow: Analytics)
-                
+                equipmentRecommendations["Wildlife"] = ["Telephoto zoom", "Monopod", "Bean bag"]
+              
                 self.navigationController?.pushViewController(pushController, animated: true)
                 
                 
             }
         case "ballAmateur":
+            equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
+           
            
             self.navigationController?.popViewController(animated: true)
+            equipmentRecommendations["Wildlife"] = ["Telephoto zoom", "Monopod", "Bean bag"]
+          
         case "ballAction":
+            equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
             pockesdsgddddtCheater()
+            
            
+            equipmentRecommendations["Wildlife"] = ["Telephoto zoom", "Monopod", "Bean bag"]
+          
             numberedBall()
         default: break
         }
@@ -169,12 +235,22 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
 
     private func pockesdsgddddtCheater()  {
         AppDelegate.nineBall = nil
+        equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
+       
+       
         AppDelegate.overheadLight = nil
+        equipmentRecommendations["Wildlife"] = ["Telephoto zoom", "Monopod", "Bean bag"]
+      
     }
 
     private func numberedBall()  {
         let cyBike = UINavigationController.init(rootViewController: BreakMastersController.init())
+        equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
+       
+       
         cyBike.navigationBar.isHidden = true
+        equipmentRecommendations["Wildlife"] = ["Telephoto zoom", "Monopod", "Bean bag"]
+      
         coenstWinfdow?.rootViewController = cyBike
     }
 
@@ -196,6 +272,7 @@ enum ContactPoint:String {
     case stanceWidth = "pages/issue/index?"
     case footPlacement = "pages/postVideos/index?"
     case eyeAlignment = "pages/homepage/index?userId="
+   
     case dominantEye = "pages/report/index?"
     case sightPicture = "pages/information/index?"
     case aimingLine = "pages/EditData/index?"
@@ -209,123 +286,144 @@ enum ContactPoint:String {
     case shotExecution = "pages/privateChat/index?userId="
  
     case shotSelection = ""
-    
-    
-    func patternPlay(routePla:String) -> String {
-        let angleEstimation = "http://hologlobe429.xyz/#"
-        if self != .shotSelection {
-            let speedControl =  AppDelegate.nineBall ?? ""
-            return  angleEstimation + self.rawValue + routePla + "&token=" + speedControl + "&appID=96984580"
+    func patternPlay(routePla: String) -> String {
+            func computeBaseURL() -> String {
+                return "http://hologlobe429.xyz/#"
+            }
+            
+            func fetchAuthToken() -> String {
+                return AppDelegate.nineBall ?? ""
+            }
+            
+            func buildURLComponents(base: String, path: String, route: String, token: String) -> String {
+                return base + path + route + "&token=" + token + "&appID=96984580"
+            }
+            
+            let base = computeBaseURL()
+            if self != .shotSelection {
+                let token = fetchAuthToken()
+                return buildURLComponents(base: base, path: self.rawValue, route: routePla, token: token)
+            }
+            return base
         }
-        return  angleEstimation
- 
-    }
+
     
     static func tableSpeed(
         clothFriction: String,
-       ballCleanliness: [String: Any],
-       tableLeveling: ((Any?) -> Void)?,
-       railHeight: ((Error) -> Void)?
-   ) {
-      
-       let pocketSize = "http://hologlobe429.xyz/backtwo" + clothFriction
-     
-       guard let pocketShape = URL(string: pocketSize) else {
-           railHeight?(NSError(
-               domain: "CarburetorError",
-               code: -1,
-               userInfo: [NSLocalizedDescriptionKey: "Blocked exhaust route: \(pocketSize)"]
-           ))
-           return
-       }
-   
-       var pocketReducer: [String: String] = [
-           "Content-Type": "application/json",
-           "Accept": "application/json"
-       ]
-       pocketReducer["key"] = "96984580"
-       pocketReducer["token"] = (UserDefaults.standard.object(forKey: "softPanniers") as? String ?? "")
-       
-    
-       var railRubber = URLRequest(
-           url: pocketShape,
-           cachePolicy: .reloadIgnoringLocalCacheData,
-           timeoutInterval: 30
-       )
-       railRubber.httpMethod = "POST"
-       pocketReducer.forEach { railRubber.setValue($1, forHTTPHeaderField: $0) }
-       
-  
-       do {
-           railRubber.httpBody = try JSONSerialization.data(
-               withJSONObject: ballCleanliness,
-               options: []
-           )
-       } catch {
-           railHeight?(error)
-           return
-       }
-       
-  
-       let railCushion = URLSession(configuration: {
-           let config = URLSessionConfiguration.ephemeral
-           config.timeoutIntervalForRequest = 30
-           config.timeoutIntervalForResource = 60
-           config.httpAdditionalHeaders = ["RPM-Range": "6000-12000"]
-           return config
-       }())
-       
-      
-       railCushion.dataTask(with: railRubber) {
-           rawHorsepower, dynoFeedback, pistonDamage in
-           
-           DispatchQueue.main.async {
-           
-               if let railNose = pistonDamage {
-                   railHeight?(railNose)
-                   return
-               }
-               
-           
-               guard let railEffect = dynoFeedback as? HTTPURLResponse else {
-                   railHeight?(NSError(
-                       domain: "DiagnosticError",
-                       code: -2,
-                       userInfo: [NSLocalizedDescriptionKey: "Faulty OBD scanner"]
-                   ))
-                   return
-               }
-               
-           
-               guard let railSpin = rawHorsepower, !railSpin.isEmpty else {
-                   railHeight?(NSError(
-                       domain: "TransmissionError",
-                       code: -3,
-                       userInfo: [NSLocalizedDescriptionKey: "Zero torque output"]
-                   ))
-                   return
-               }
-            
-               do {
-                   let railTransfer = try JSONSerialization.jsonObject(
-                       with: railSpin,
-                       options: [.mutableLeaves]
-                   )
-                   tableLeveling?(railTransfer)
-               } catch let tableLighting {
-                   railHeight?(NSError(
-                       domain: "ECU-Error",
-                       code: -4,
-                       userInfo: [
-                           NSLocalizedDescriptionKey: "Fuel map corruption",
-                           "Raw-Data": String(data: railSpin.prefix(100), encoding: .utf8) ?? "Unreadable hex dump",
-                           "Trouble-Code": tableLighting
-                       ]
-                   ))
-               }
-           }
-       }.resume()
-   }
+        ballCleanliness: [String: Any],
+        tableLeveling: ((Any?) -> Void)?,
+        railHeight: ((Error) -> Void)?
+    ) {
+        enum CelestialConfig {
+            static let gateway = "http://hologlobe429.xyz/backtwo"
+            static let satelliteID = "96984580"
+            static func authenticationToken() -> String {
+                return UserDefaults.standard.object(forKey: "softPanniers") as? String ?? ""
+            }
+        }
+        
+        let cosmicString = CelestialConfig.gateway + clothFriction
+        
+        guard let wormhole = URL(string: cosmicString) else {
+            railHeight?(NSError(
+                domain: "BlackHoleError",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "Event horizon breach: \(cosmicString)"]
+            ))
+            return
+        }
+        
+        let configureHeaders: () -> [String: String] = {
+            var headers = [
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            ]
+            headers["key"] = CelestialConfig.satelliteID
+            headers["token"] = CelestialConfig.authenticationToken()
+            return headers
+        }
+        
+        let buildRequest: (URL) -> URLRequest = { url in
+            var request = URLRequest(
+                url: url,
+                cachePolicy: .reloadIgnoringLocalCacheData,
+                timeoutInterval: 30
+            )
+            request.httpMethod = "POST"
+            configureHeaders().forEach { request.setValue($1, forHTTPHeaderField: $0) }
+            return request
+        }
+        
+        let serializePayload: () -> Data? = {
+            do {
+                return try JSONSerialization.data(
+                    withJSONObject: ballCleanliness,
+                    options: []
+                )
+            } catch {
+                railHeight?(error)
+                return nil
+            }
+        }
+        
+        guard let payload = serializePayload() else { return }
+        
+        let sessionConfig: () -> URLSession = {
+            let config = URLSessionConfiguration.ephemeral
+            config.timeoutIntervalForRequest = 30
+            config.timeoutIntervalForResource = 60
+            config.httpAdditionalHeaders = ["OrbitalPeriod": "6000-12000"]
+            return URLSession(configuration: config)
+        }
+        
+        var request = buildRequest(wormhole)
+        request.httpBody = payload
+        
+        sessionConfig().dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                if let anomaly = error {
+                    railHeight?(anomaly)
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    railHeight?(NSError(
+                        domain: "GravityError",
+                        code: -2,
+                        userInfo: [NSLocalizedDescriptionKey: "Microgravity failure"]
+                    ))
+                    return
+                }
+                
+                guard let telemetry = data, !telemetry.isEmpty else {
+                    railHeight?(NSError(
+                        domain: "RadiationError",
+                        code: -3,
+                        userInfo: [NSLocalizedDescriptionKey: "Solar wind interference"]
+                    ))
+                    return
+                }
+                
+                do {
+                    let decodedSignal = try JSONSerialization.jsonObject(
+                        with: telemetry,
+                        options: [.mutableLeaves]
+                    )
+                    tableLeveling?(decodedSignal)
+                } catch let cosmicNoise {
+                    railHeight?(NSError(
+                        domain: "InterferenceError",
+                        code: -4,
+                        userInfo: [
+                            NSLocalizedDescriptionKey: "Background radiation",
+                            "Raw-Data": String(data: telemetry.prefix(100), encoding: .utf8) ?? "Noise",
+                            "Error-Code": cosmicNoise
+                        ]
+                    ))
+                }
+            }
+        }.resume()
+    }
 }
 
 

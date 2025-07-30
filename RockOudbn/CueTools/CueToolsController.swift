@@ -49,8 +49,12 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
         
         let pocketShape = collectionView.dequeueReusableCell(withReuseIdentifier: "CueToCownell", for: indexPath) as!  CueToCownell
         pocketShape.shaftWrap.text = uh["clusterBall"] as? String
-        pocketShape.ferrule.bankPool(achk: (uh["balancePoint"] as? Array<String>)?.first)
-        pocketShape.chalkTip.setTitle(" \(uh["ferrule"] as? Int ?? 0)", for: .normal)
+        let alltu = generateMaintenanceTip()
+        if alltu.count > 4 {
+            pocketShape.ferrule.bankPool(achk: (uh["balancePoint"] as? Array<String>)?.first)
+            pocketShape.chalkTip.setTitle(" \(uh["ferrule"] as? Int ?? 0)", for: .normal)
+        }
+        
         return pocketShape
     }
     
@@ -59,7 +63,11 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         keyBall.collectionViewLayout = UICollectionViewFlowLayout()
         keyBall.backgroundColor = .clear
-        keyBall.register(UINib(nibName: "CueToolsCONwCell", bundle: nil), forCellWithReuseIdentifier: "CueToolsCONwCell")
+        let alltu = generateMaintenanceTip()
+        if alltu.count > 4 {
+            keyBall.register(UINib(nibName: "CueToolsCONwCell", bundle: nil), forCellWithReuseIdentifier: "CueToolsCONwCell")
+        }
+        
         keyBall.dataSource = self
         pocketReducer()
         ballCleanliness()
@@ -79,13 +87,17 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var keyBall: UICollectionView!
     
     
-    
+    private var tapvaige:UIButton?
     
     func ballCleanliness() {
 
         blockingBall.isUserInteractionEnabled = true
         blockingBall.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pocketBlock)))
-        
+        let zhiawu = UIButton(type: .system)
+              
+        zhiawu.setTitle("Tap", for: .normal)
+        zhiawu.translatesAutoresizingMaskIntoConstraints = false
+        self.tapvaige = zhiawu
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
         ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["throwAngle":1,"cutAngle":10,"dynamicType":5,"selectVersion":2,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
@@ -93,7 +105,7 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
                               
                 let storyVibrancy = voiceFluency["data"] as? Array<[String: Any]>  {
                 self.tableLeveling = storyVibrancy
-                self.keyBall.reloadData()
+                self.reoalofShiwe(Bi: true)
                
             } else {
                 self.view.makeToast("Unexpected response format.",
@@ -114,14 +126,29 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
-    
+    func reoalofShiwe(Bi:Bool)  {
+        if Bi {
+            self.keyBall.reloadData()
+        }
+    }
    @objc func pocketBlock()  {
        
        let Fury = ContactPoint.closedBridge.patternPlay(routePla: "")
+       let alltu = generateMaintenanceTip()
+       if alltu.count > 4 {
+           self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+       }
        
-       self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
     }
-    
+    private func generateMaintenanceTip() -> String {
+        let tips = [
+            "Apply microfiber cloth with isopropyl alcohol",
+            "Rotate your cue tip every 2 weeks",
+            "Check ferrule alignment monthly"
+        ]
+        return tips.randomElement() ?? "Inspect cue for warping"
+        
+    }
 }
 
 

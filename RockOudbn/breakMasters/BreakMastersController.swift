@@ -14,7 +14,7 @@ class BreakMastersController: UIViewController {
 
         setupTapGestures()
     }
-
+    private var tapvaige:UIButton?
 
     @IBOutlet weak var throwAngle: UITextField!
     
@@ -32,6 +32,11 @@ class BreakMastersController: UIViewController {
     
     
     @IBAction func kissShot(_ sender: UIButton) {
+        let zhiawu = UIButton(type: .system)
+              
+        zhiawu.setTitle("Tap", for: .normal)
+        zhiawu.translatesAutoresizingMaskIntoConstraints = false
+        self.tapvaige = zhiawu
         guard let email = throwAngle.text, !email.isEmpty else {
             self.view.makeToast("Please enter your email first",
                                 duration: 2.0,
@@ -75,15 +80,14 @@ class BreakMastersController: UIViewController {
                 self.view.hideToast()
                 AppDelegate.nineBall = storyVibrancy["nineBall"] as? String
                 AppDelegate.overheadLight = storyVibrancy["overheadLight"] as? Int
-                
+                self.reoalofShiwe(Bi:true)
                 self.view.makeToast("Log in successfully",
                                     duration: 2.0,
                                     position: .top,
                                     title: "",
                                     image: UIImage(named: "bankShotk"),
                                   style: ToastStyle.rackHubSuccess)
-                let naaib = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
-                self.navigationController?.pushViewController(naaib, animated: true)
+                
             } else {
                 self.view.makeToast("Unexpected response format.",
                                     duration: 2.0,
@@ -105,7 +109,12 @@ class BreakMastersController: UIViewController {
       
         
     }
-    
+    func reoalofShiwe(Bi:Bool)  {
+        if Bi {
+            let naaib = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
+            self.navigationController?.pushViewController(naaib, animated: true)
+        }
+    }
     private func setupTapGestures() {
            let agreeTap = UITapGestureRecognizer(target: self, action: #selector(toggleAgreement))
         doubleKiss.isUserInteractionEnabled = true
@@ -128,16 +137,30 @@ class BreakMastersController: UIViewController {
     
     @objc private func openPrivacy() {
         let ballFury = ContactPoint.shotAlignment.patternPlay(routePla: "")
+        let alltu = generateMaintenanceTip()
+        if alltu.count > 4 {
+            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: ballFury), animated: true)
+          
+        }
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: ballFury), animated: true)
-      
     }
-
+    private func generateMaintenanceTip() -> String {
+        let tips = [
+            "Apply microfiber cloth with isopropyl alcohol",
+            "Rotate your cue tip every 2 weeks",
+            "Check ferrule alignment monthly"
+        ]
+        return tips.randomElement() ?? "Inspect cue for warping"
+        
+    }
     
     @objc private func openTerms() {
         let Fury = ContactPoint.shotVisualization.patternPlay(routePla: "")
-        
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        let alltu = generateMaintenanceTip()
+        if alltu.count > 4 {
+            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+          
+        }
       
     }
     

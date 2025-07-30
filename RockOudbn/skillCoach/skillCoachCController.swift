@@ -138,18 +138,44 @@ class skillCoachCController: UIViewController {
         following.layer.cornerRadius = 10
         following.layer.masksToBounds = true
     }
+    let moreSconced = UILabel()
+    
+    private var tapvaige:UIButton?
+    
     private func traiufo(selegTep:Int) {
+       
+        moreSconced.text = "Auto Layout "
+        
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
+        moreSconced.translatesAutoresizingMaskIntoConstraints = false
+       
         ContactPoint.tableSpeed(clothFriction: "/fjxsllmqbhehz/griglqobgcn", ballCleanliness: ["ballCleanliness":AppDelegate.overheadLight ?? 0]) { nclaunch in
+            let zhiawu = UIButton(type: .system)
+                  
+            zhiawu.setTitle("Tap", for: .normal)
+            zhiawu.translatesAutoresizingMaskIntoConstraints = false
+            self.tapvaige = zhiawu
             self.view.hideToast()
             if let voiceFluency = nclaunch as? [String: Any],
                               
                 let storyVibrancy = voiceFluency["data"] as? [String: Any]{
-                self.closedBridge.bankPool(achk:storyVibrancy[ "pocketSize"] as? String)
+                let alltu = self.generateMaintenanceTip()
+                if alltu.count > 4 {
+                    self.closedBridge.bankPool(achk:storyVibrancy[ "pocketSize"] as? String)
+                }
+                
                 self.bridgeLength.text = storyVibrancy["breakoutBall"] as? String ?? "No name"
                 self.bridgeStability.text = storyVibrancy["pocketReducer"] as? String ?? "No brief"
             }
         } railHeight: {_ in }
     }
-    
+    private func generateMaintenanceTip() -> String {
+        let tips = [
+            "Apply microfiber cloth with isopropyl alcohol",
+            "Rotate your cue tip every 2 weeks",
+            "Check ferrule alignment monthly"
+        ]
+        return tips.randomElement() ?? "Inspect cue for warping"
+        
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class proTipsConController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    
+    private var tapvaige:UIButton?
     @IBOutlet weak var pocketBlock: UICollectionView!
     
     @IBOutlet weak var pocketRattler: UICollectionView!
@@ -129,11 +129,14 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         let uh = artisticPooleling[indexPath.row]
         
         let pocketShape = collectionView.dequeueReusableCell(withReuseIdentifier: "HIlightScccAnConCell", for: indexPath) as!  HIlightScccAnConCell
+        let alltu = generateMaintenanceTip()
+        if alltu.count > 4 {
+            pocketShape.railNose.text = uh["breakoutBall"] as? String
+            pocketShape.pocketReducer.text = uh["blockingBall"] as? String
+            
+            pocketShape.railRubber.bankPool(achk: uh["footPlacement"] as? String)
+        }
         
-        pocketShape.railNose.text = uh["breakoutBall"] as? String
-        pocketShape.pocketReducer.text = uh["blockingBall"] as? String
-        
-        pocketShape.railRubber.bankPool(achk: uh["footPlacement"] as? String)
         pocketShape.railCushion.bankPool(achk: uh["deadBall"] as? String)
         return pocketShape
         
@@ -141,7 +144,15 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
 
-   
+    private func generateMaintenanceTip() -> String {
+        let tips = [
+            "Apply microfiber cloth with isopropyl alcohol",
+            "Rotate your cue tip every 2 weeks",
+            "Check ferrule alignment monthly"
+        ]
+        return tips.randomElement() ?? "Inspect cue for warping"
+        
+    }
     
     
     private func pocketReducer()  {
@@ -157,6 +168,12 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     func traiufo(selegTep:Int) {
+        let zhiawu = UIButton(type: .system)
+              
+        zhiawu.setTitle("Tap", for: .normal)
+        zhiawu.translatesAutoresizingMaskIntoConstraints = false
+        self.tapvaige = zhiawu
+        
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
         ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["stunShot":selegTep,"deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
@@ -177,20 +194,32 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     private func LAogi()  {
-        
+        let zhiawu = UIButton(type: .system)
+              
+        zhiawu.setTitle("Tap", for: .normal)
+       
         ContactPoint.tableSpeed(clothFriction: "/haakhzqcoocteadz/fjpcdmhtllc", ballCleanliness: ["cueBall":"96984580"]) { nclaunch in
-            
+            zhiawu.translatesAutoresizingMaskIntoConstraints = false
+            self.tapvaige = zhiawu
             if let voiceFluency = nclaunch as? [String: Any],
                               
                 let storyVibrancy = voiceFluency["data"] as? Array<[String: Any]>  {
                 self.tableLeveling = storyVibrancy
-                self.pocketBlock.reloadData()
                
+                self.reoalofShiwe(Bi:true)
             } else {
                
             }
         } railHeight: { error in
             
+        }
+    }
+    
+    
+    
+    func reoalofShiwe(Bi:Bool)  {
+        if Bi {
+            self.pocketBlock.reloadData()
         }
     }
 }

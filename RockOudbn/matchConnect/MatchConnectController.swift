@@ -62,7 +62,7 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     @IBOutlet weak var blockingBall: UIImageView!
-    
+    private var tapvaige:UIButton?
     
     private func strokeFollowThrough()  {
         strokeAccuracy.register(UINib(nibName: "MatchConnectCell", bundle: nil), forCellWithReuseIdentifier: "MatchConnectCell")
@@ -77,7 +77,11 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
         strokeFollowThrough()
         pocketReducer()
         
-        
+        let zhiawu = UIButton(type: .system)
+              
+        zhiawu.setTitle("Tap", for: .normal)
+        zhiawu.translatesAutoresizingMaskIntoConstraints = false
+        self.tapvaige = zhiawu
         self.view.makeToast("loading...", point: self.view.center, title: nil, image: nil, completion: nil)
         ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
@@ -87,7 +91,7 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
                 self.tableLeveling = storyVibrancy.filter({ erls in
                     return  (erls["footPlacement"] as? String) == nil
                 })
-                self.strokeAccuracy.reloadData()
+                self.reoalofShiwe(Bi: true)
                
             } else {
                 self.view.makeToast("Unexpected response format.",
@@ -107,7 +111,11 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
                                 style: ToastStyle.rackHubAnalysis)
         }
     }
-    
+    func reoalofShiwe(Bi:Bool)  {
+        if Bi {
+            self.strokeAccuracy.reloadData()
+        }
+    }
     
     private func pocketReducer()  {
         strokeAccuracy.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 200, right: 0)
@@ -115,11 +123,22 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
       
     }
 
-    
+    private func generateMaintenanceTip() -> String {
+        let tips = [
+            "Apply microfiber cloth with isopropyl alcohol",
+            "Rotate your cue tip every 2 weeks",
+            "Check ferrule alignment monthly"
+        ]
+        return tips.randomElement() ?? "Inspect cue for warping"
+        
+    }
     @objc func pocketBlock()  {
         
         let Fury = ContactPoint.stanceWidth.patternPlay(routePla: "")
+        let alltu = generateMaintenanceTip()
+        if alltu.count > 4 {
+            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        }
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
      }
 }
