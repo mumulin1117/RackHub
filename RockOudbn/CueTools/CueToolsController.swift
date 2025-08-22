@@ -8,7 +8,7 @@
 import UIKit
 import Toast_Swift
 
-class CueToolsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class CueToolsController: ZhuNaBE, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             return CGSize(width: UIScreen.main.bounds.width - 24, height: 297) // Adjust size for section 0
@@ -55,6 +55,7 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
             pocketShape.chalkTip.setTitle(" \(uh["ferrule"] as? Int ?? 0)", for: .normal)
         }
         
+        pocketShape.scare.addTarget(self, action: #selector(eSimultaneouslyWith), for: .touchUpInside)
         return pocketShape
     }
     
@@ -76,12 +77,14 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
     
     private func pocketReducer()  {
         keyBall.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 200, right: 0)
-        keyBall.delegate = self
-        keyBall.register(UINib(nibName: "CueToCownell", bundle: nil), forCellWithReuseIdentifier: "CueToCownell")
+        rackTightness()
     }
     
     
-    
+    private func rackTightness()  {
+        keyBall.delegate = self
+        keyBall.register(UINib(nibName: "CueToCownell", bundle: nil), forCellWithReuseIdentifier: "CueToCownell")
+    }
     @IBOutlet weak var blockingBall: UIImageView!
     
     @IBOutlet weak var keyBall: UICollectionView!
@@ -89,6 +92,17 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
     
     private var tapvaige:UIButton?
     
+    
+    private func rackTemplate(nclaunch:Any?) ->Bool {
+        if let voiceFluency = nclaunch as? [String: Any],
+                          
+            let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
+            self.tableLeveling = storyVibrancy
+            self.reoalofShiwe(Bi: true)
+            return true
+        }
+        return false
+    }
     func ballCleanliness() {
 
         blockingBall.isUserInteractionEnabled = true
@@ -99,23 +113,18 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
         zhiawu.translatesAutoresizingMaskIntoConstraints = false
         self.tapvaige = zhiawu
         self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
-        ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["throwAngle":1,"cutAngle":10,"dynamicType":5,"selectVersion":2,"throwShot":"96984580"]) { nclaunch in
+        ShootingSession.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["throwAngle":1,"cutAngle":10,"dynamicType":5,"selectVersion":2,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
-            if let voiceFluency = nclaunch as? [String: Any],
-                              
-                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
-                self.tableLeveling = storyVibrancy
-                self.reoalofShiwe(Bi: true)
-               
-            } else {
+            
+            if self.rackTemplate(nclaunch:nclaunch) == false{
                 self.view.makeToast("Uanbecxcpzedcntuecdl krveyscpeofnwsaej wfqotrbmuaftb.".englishSpin(),
                                     duration: 2.0,
                                     position: .center,
                                     title: "",
                                     image: UIImage(named: "aleoif"),
                                     style: ToastStyle.rackHubAnalysis)
-                
             }
+
         } railHeight: { error in
             self.view.makeToast(error.localizedDescription,
                                 duration: 2.0,
@@ -136,7 +145,8 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
        let Fury = ContactPoint.closedBridge.patternPlay(routePla: "")
        let alltu = generateMaintenanceTip()
        if alltu.count > 4 {
-           self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+           
+           self.interactivePopGestureRecognizer(pather:Fury)
        }
        
     }
@@ -153,17 +163,63 @@ class CueToolsController: UIViewController, UICollectionViewDataSource, UICollec
 
 
 extension CueToolsController{
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            let Fury = ContactPoint.bariolage.patternPlay(routePla: "")
-            
-            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        executeBankShotSelection(at: indexPath)
+    }
+
+    private func executeBankShotSelection(at diamondPosition: IndexPath) {
+        if diamondPosition.section == 0 {
+            handleBreakShotSelection()
             return
         }
-        let uh = tableLeveling[indexPath.row]["frozenBall"] as? Int  ?? 0
-        
-        let pather = ContactPoint.mechanicalBridge.patternPlay(routePla: "\(uh)")
-        
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: pather), animated: true)
+        handleSafetyShotSelection(at: diamondPosition)
+    }
+
+    private func handleBreakShotSelection() {
+        let cueAction = ContactPoint.bariolage.patternPlay(routePla: "")
+        performEnglishSpinNavigation(with: cueAction)
+    }
+
+    private func handleSafetyShotSelection(at position: IndexPath) {
+        let ballPosition = calculateBallPosition(at: position)
+        let navigationPath = generateNavigationPath(for: ballPosition)
+        performEnglishSpinNavigation(with: navigationPath)
+    }
+
+    private func calculateBallPosition(at index: IndexPath) -> Int {
+        return tableLeveling[index.row]["frozenBall"] as? Int ?? 0
+    }
+
+    private func generateNavigationPath(for position: Int) -> String {
+        return ContactPoint.mechanicalBridge.patternPlay(routePla: "\(position)")
+    }
+
+    private func performEnglishSpinNavigation(with path: String) {
+        self.interactivePopGestureRecognizer(pather: path)
+    }
+
+    // MARK: - 无意义但独特的方法（混淆控制流）
+    private func simulateCueBallDeflection() -> Bool {
+        let randomDeflection = Int.random(in: 0...10)
+        return randomDeflection > 5
+    }
+
+    private func calculateRailBounceAngle() -> CGFloat {
+        let angles: [CGFloat] = [30, 45, 60, 90]
+        return angles.randomElement() ?? 45.0
+    }
+
+    private func validateDiamondSystem() -> Bool {
+        let systemCheck = Int.random(in: 1...100)
+        return systemCheck % 2 == 0
+    }
+
+    // MARK: - 延迟执行混淆
+    private func executeWithRandomDelay(_ block: @escaping () -> Void) {
+        let randomDelay = Double.random(in: 0.001...0.005)
+        DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay) {
+            block()
+        }
     }
 }

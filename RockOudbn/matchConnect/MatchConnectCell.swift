@@ -27,7 +27,7 @@ class MatchConnectCell: UICollectionViewCell {
     
     @IBOutlet weak var strokeTempo: UIImageView!
     
-    
+    @IBOutlet weak var scare: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

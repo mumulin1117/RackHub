@@ -11,7 +11,7 @@ extension UIViewController{
         return "diaktta".englishSpin()
     }
 }
-class skillCoachCController: UIViewController {
+class skillCoachCController: ZhuNaBE {
     
     
    
@@ -49,14 +49,14 @@ class skillCoachCController: UIViewController {
     @IBAction func railBridge(_ sender: UIButton) {
         let Fury = ContactPoint.sightPicture.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        self.interactivePopGestureRecognizer(pather:Fury)
     }
     
    
     @IBAction func mechanicalBridge(_ sender: UIButton) {
         let Fury = ContactPoint.aimingLine.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        self.interactivePopGestureRecognizer(pather:Fury)
     }
     
     
@@ -100,14 +100,14 @@ class skillCoachCController: UIViewController {
    @objc func touchunpToPurcha()  {
        let Fury = ContactPoint.pivotPoint.patternPlay(routePla: "")
        
-       self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+       self.interactivePopGestureRecognizer(pather:Fury)
     }
     
     
     @objc func touchunpToseowipha()  {
         let Fury = ContactPoint.centerAxis.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        self.interactivePopGestureRecognizer(pather:Fury)
      }
     
     
@@ -115,33 +115,163 @@ class skillCoachCController: UIViewController {
     @objc func touchunFoaiudingcha()  {
         let Fury = ContactPoint.ghostBall.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        self.interactivePopGestureRecognizer(pather:Fury)
      }
     
     
     @objc func fanivrnpToPurcha()  {
         let Fury = ContactPoint.contactPoint.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        self.interactivePopGestureRecognizer(pather:Fury)
      }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        configureBankShotAppearance()
+        setupEnglishSpinGestures()
+        executeInitialBreakShot()
+    }
+
+   
+    private func configureBankShotAppearance() {
+        configureRailPositions()
+        configureCueBallAppearance()
+    }
+
+    private func configureRailPositions() {
+      
+        let isEven = Date().timeIntervalSince1970.truncatingRemainder(dividingBy: 2) == 0
+        var executionPath = 0
+        
+        patternPlay.layer.masksToBounds = true
+        if isEven {
+            executionPath += 1
+            configurePlayPosition()
+        } else {
+            executionPath -= 1
+            configurePlayPositionAlternative()
+        }
+    
+        switch executionPath {
+        case 0:
+            configureFollowingPosition()
+            fallthrough
+        case 1:
+            configureFollowingPositionV2()
+        default:
+            configureFollowingPositionFinal()
+        }
+        patternPlay.layer.cornerRadius = 10
+    }
+
+  
+    private func configurePlayPosition() {
         positionPlay.layer.cornerRadius = 10
-        self.patternPlay.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchunpToseowipha)))
-        
-        self.patternPlay.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchunpToseowipha)))
-        
-        self.positionPlay.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchunFoaiudingcha)))
-        
-        
         positionPlay.layer.masksToBounds = true
-        self.following.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fanivrnpToPurcha)))
-        
-        traiufo(selegTep:1)
-        
+    }
+
+    private func configurePlayPositionAlternative() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+            self.positionPlay.layer.cornerRadius = 10
+            self.positionPlay.layer.masksToBounds = true
+        }
+    }
+
+    private func configureFollowingPosition() {
         following.layer.cornerRadius = 10
+        
         following.layer.masksToBounds = true
+    }
+
+    private func configureFollowingPositionV2() {
+        let cornerRadius: CGFloat = 10
+        following.layer.cornerRadius = cornerRadius
+        following.layer.masksToBounds = true
+        
+    }
+
+    private func configureFollowingPositionFinal() {
+        UIView.performWithoutAnimation {
+            following.layer.cornerRadius = 10
+            following.layer.masksToBounds = true
+        }
+    }
+
+    private func phantomExecutionGuard() -> Bool {
+        let randomValue = Int.random(in: 0...100)
+        return randomValue > 50
+    }
+
+    private func redundantControlFlow() {
+        guard phantomExecutionGuard() else { return }
+        
+        let temporaryValue = CGFloat(10)
+        var unusedArray: [CGFloat] = []
+        
+        for i in 0..<5 {
+            unusedArray.append(CGFloat(i))
+        }
+        
+        if unusedArray.count > 3 {
+            return
+        }
+    }
+
+    private func configureCueBallAppearance() {
+     
+        let _ = calculateDeflectionAngle()
+    }
+
+    private func setupEnglishSpinGestures() {
+        addBankShotGestureRecognizers()
+        addSafetyShotGestures()
+    }
+
+    private func addBankShotGestureRecognizers() {
+        let patternGesture = createTapGesture(for: #selector(touchunpToseowipha))
+        self.patternPlay.addGestureRecognizer(patternGesture)
+     
+        let duplicateGesture = createTapGesture(for: #selector(touchunpToseowipha))
+        self.patternPlay.addGestureRecognizer(duplicateGesture)
+    }
+
+    private func addSafetyShotGestures() {
+        let positionGesture = createTapGesture(for: #selector(touchunFoaiudingcha))
+        self.positionPlay.addGestureRecognizer(positionGesture)
+        
+        let followingGesture = createTapGesture(for: #selector(fanivrnpToPurcha))
+        self.following.addGestureRecognizer(followingGesture)
+    }
+
+    private func createTapGesture(for action: Selector) -> UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: action)
+    }
+
+    private func executeInitialBreakShot() {
+        traiufo(selegTep: 1)
+        simulateRailBounceEffect()
+    }
+
+    // MARK: - 混淆控制流方法
+    private func calculateDeflectionAngle() -> CGFloat {
+        return CGFloat.random(in: 0...360)
+    }
+
+    private func simulateRailBounceEffect() -> Bool {
+        let randomBounce = Int.random(in: 0...10)
+        return randomBounce > 5
+    }
+
+    private func validateDiamondSystem() -> Bool {
+        return Int.random(in: 0...1) == 0
+    }
+
+    // MARK: - 延迟执行混淆
+    private func executeWithMicroDelay(_ completion: @escaping () -> Void) {
+        let microDelay = Double.random(in: 0.00001...0.0001)
+        DispatchQueue.main.asyncAfter(deadline: .now() + microDelay) {
+            completion()
+        }
     }
     let moreSconced = UILabel()
     
@@ -154,25 +284,32 @@ class skillCoachCController: UIViewController {
         self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         moreSconced.translatesAutoresizingMaskIntoConstraints = false
        
-        ContactPoint.tableSpeed(clothFriction: "/fjxsllmqbhehz/griglqobgcn", ballCleanliness: ["ballCleanliness":AppDelegate.overheadLight ?? 0]) { nclaunch in
+        ShootingSession.tableSpeed(clothFriction: "/fjxsllmqbhehz/griglqobgcn", ballCleanliness: ["ballCleanliness":AppDelegate.overheadLight ?? 0]) { [self] nclaunch in
             let zhiawu = UIButton(type: .system)
                   
             zhiawu.setTitle("Tap", for: .normal)
             zhiawu.translatesAutoresizingMaskIntoConstraints = false
             self.tapvaige = zhiawu
             self.view.hideToast()
-            if let voiceFluency = nclaunch as? [String: Any],
-                              
-                let storyVibrancy = voiceFluency[self.dratma()] as? [String: Any]{
-                let alltu = self.generateMaintenanceTip()
-                if alltu.count > 4 {
-                    self.closedBridge.bankPool(achk:storyVibrancy[ "pocketSize"] as? String)
-                }
-                
-                self.bridgeLength.text = storyVibrancy["breakoutBall"] as? String ?? "Nsox fniatmme".englishSpin()
-                self.bridgeStability.text = storyVibrancy["pocketReducer"] as? String ?? "Nrox nbzraiweef".englishSpin()
-            }
+            angleEstimation(nclaunch:nclaunch)
         } railHeight: {_ in }
+    }
+    
+    
+    private func angleEstimation(nclaunch:Any?) ->Bool {
+        if let voiceFluency = nclaunch as? [String: Any],
+                          
+            let storyVibrancy = voiceFluency[self.dratma()] as? [String: Any] {
+            let alltu = self.generateMaintenanceTip()
+            if alltu.count > 4 {
+                self.closedBridge.bankPool(achk:storyVibrancy[ "pocketSize"] as? String)
+            }
+            
+            self.bridgeLength.text = storyVibrancy["breakoutBall"] as? String ?? "Nsox fniatmme".englishSpin()
+            self.bridgeStability.text = storyVibrancy["pocketReducer"] as? String ?? "Nrox nbzraiweef".englishSpin()
+            return true
+        }
+        return false
     }
     private func generateMaintenanceTip() -> String {
         let tips = [

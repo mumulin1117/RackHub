@@ -30,9 +30,24 @@ class MarkedBalltroller: UIViewController {
 
     
     private func clothFriction()  {
-        let naaib = UIStoryboard(name: "Mbavirn".englishSpin(), bundle: nil).instantiateViewController(identifier: "barFevert") as! UITabBarController
+        let naaib = UIStoryboard(name: "Mbavirn".englishSpin(), bundle: nil).instantiateViewController(identifier: "barFevert")
         UIKitlael.text = "Hello, ROCKHUD!"
         self.navigationController?.pushViewController(naaib, animated: true)
     }
 }
 
+class ZhuNaBE: UIViewController {
+    @objc func eSimultaneouslyWith()  {
+        
+       
+       let pather = ContactPoint.dominantEye.patternPlay(routePla: "")
+       
+        interactivePopGestureRecognizer(pather:pather)
+    }
+    
+    func interactivePopGestureRecognizer(pather:String)  {
+        let feopi = RailRubber_Controller.init(baerllSlow: pather)
+        
+        self.navigationController?.pushViewController(feopi, animated: true)
+    }
+}

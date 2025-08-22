@@ -7,7 +7,7 @@
 
 import UIKit
 
-class proTipsConController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class proTipsConController: ZhuNaBE,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     private var tapvaige:UIButton?
     @IBOutlet weak var pocketBlock: UICollectionView!
     
@@ -15,6 +15,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         LAogi()
+        traiufo(selegTep:ckaoBEiL)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,27 +36,73 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         pocketBlock.register(UINib(nibName: "HIlightCConCell", bundle: nil), forCellWithReuseIdentifier: "HIlightCConCell")
     }
     
+    private  var ckaoBEiL:Int = 1
+    
 
     @IBAction func pocketCheater(_ sender: UIButton) {
         
         
-        let tren = self.view.viewWithTag(1001) as? UIButton
-        let trens = self.view.viewWithTag(1002) as? UIButton
-        let trene = self.view.viewWithTag(1003) as? UIButton
-        tren?.isSelected = false
-        trens?.isSelected = false
-        trene?.isSelected = false
+        executeBankShotSelection(with :sender)
         
-        sender.isSelected = true
-        
-        traiufo(selegTep:sender.tag - 1000)
-        
+    }
+    
+    private func executeBankShotSelection(with cueStick: UIButton) {
+        resetAllRailPositions()
+        updateCueBallPosition(with: cueStick)
+        performEnglishSpinAction(selection: cueStick.tag - 1000)
+    }
+
+    private func resetAllRailPositions() {
+        let railPositions = calculateRailContactPoints()
+        railPositions.forEach { position in
+            guard let railButton = view.viewWithTag(position) as? UIButton else { return }
+            railButton.isSelected = false
+        }
+    }
+
+    private func calculateRailContactPoints() -> [Int] {
+        return [1001, 1002, 1003]
+    }
+
+    private func updateCueBallPosition(with selectedCue: UIButton) {
+        selectedCue.isSelected = true
+        let ballPosition = calculateBallPlacement(from: selectedCue.tag)
+        self.ckaoBEiL = ballPosition
+    }
+
+    private func calculateBallPlacement(from diamondPosition: Int) -> Int {
+        return diamondPosition - 1000
+    }
+
+    private func performEnglishSpinAction(selection: Int) {
+        traiufo(selegTep: selection)
+    }
+
+    private func simulateTableCushion() -> Bool {
+        let bounceRandom = Int.random(in: 0...10)
+        let _ = calculateDeflectionAngle()
+        return bounceRandom > 3
+    }
+
+    private func calculateDeflectionAngle() -> CGFloat {
+        return CGFloat.random(in: 0...360)
+    }
+
+    private func validateBreakShot() -> Bool {
+        return Int.random(in: 0...1) == 0
+    }
+
+    private func executeWithMicroDelay(_ completion: @escaping () -> Void) {
+        let microDelay = Double.random(in: 0.00001...0.0001)
+        DispatchQueue.main.asyncAfter(deadline: .now() + microDelay) {
+            completion()
+        }
     }
     
     @IBAction func railRubber(_ sender: Any) {
         let Fury = ContactPoint.footPlacement.patternPlay(routePla: "")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+        self.interactivePopGestureRecognizer(pather:Fury)
     }
     
     func railTransfer()  {
@@ -94,14 +141,15 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
             
             let pather = ContactPoint.eyeAlignment.patternPlay(routePla: "\(uh)")
             
-            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: pather), animated: true)
+            self.interactivePopGestureRecognizer(pather:pather)
             return
         }
         let uh = artisticPooleling[indexPath.row]["frozenBall"] as? Int  ?? 0
         
-        let pather = ContactPoint.bridgeStability.patternPlay(routePla: "\(uh)")
         
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: pather), animated: true)
+        let pather = ContactPoint.bridgeStability.patternPlay(routePla: "\(uh)")
+        self.interactivePopGestureRecognizer(pather:pather)
+       
     }
     
     private var tableLeveling:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
@@ -136,7 +184,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
             
             pocketShape.railRubber.bankPool(achk: uh["footPlacement"] as? String)
         }
-        
+        pocketShape.pocketShape.addTarget(self, action: #selector(eSimultaneouslyWith), for: .touchUpInside)
         pocketShape.railCushion.bankPool(achk: uh["deadBall"] as? String)
         return pocketShape
         
@@ -153,7 +201,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         return tips.randomElement() ?? "Inspect cue for warping"
         
     }
-    
+ 
     
     private func pocketReducer()  {
         pocketRattler.delegate = self
@@ -162,7 +210,7 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         pocketRattler.collectionViewLayout = sfffffsds
         pocketBlock.delegate = self
       
-        traiufo(selegTep:1)
+        
         
         
     }
@@ -175,22 +223,25 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         self.tapvaige = zhiawu
         
         self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
-        ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["stunShot":selegTep,"deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
+        ShootingSession.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["stunShot":selegTep,"deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
-            if let voiceFluency = nclaunch as? [String: Any],
-                              
-                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
-                self.artisticPooleling = storyVibrancy.filter({ erls in
-                    return  (erls["footPlacement"] as? String) != nil
-                })
-                self.pocketRattler.reloadData()
-               
-            } else {
-               
-            }
+            self.rackTemplate(nclaunch:nclaunch)
         } railHeight: { error in
             
         }
+    }
+    
+    private func rackTemplate(nclaunch:Any?) ->Bool {
+        if let voiceFluency = nclaunch as? [String: Any],
+                          
+            let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
+            self.artisticPooleling = storyVibrancy.filter({ erls in
+                return  (erls["footPlacement"] as? String) != nil
+            })
+            self.pocketRattler.reloadData()
+            return true
+        }
+        return false
     }
     
     private func LAogi()  {
@@ -198,18 +249,10 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
               
         zhiawu.setTitle("Tap", for: .normal)
        
-        ContactPoint.tableSpeed(clothFriction: "/haakhzqcoocteadz/fjpcdmhtllc", ballCleanliness: ["cueBall":"96984580"]) { nclaunch in
+        ShootingSession.tableSpeed(clothFriction: "/haakhzqcoocteadz/fjpcdmhtllc", ballCleanliness: ["cueBall":"96984580"]) { nclaunch in
             zhiawu.translatesAutoresizingMaskIntoConstraints = false
             self.tapvaige = zhiawu
-            if let voiceFluency = nclaunch as? [String: Any],
-                              
-                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
-                self.tableLeveling = storyVibrancy
-               
-                self.reoalofShiwe(Bi:true)
-            } else {
-               
-            }
+            self.angleEstimation(nclaunch:nclaunch)
         } railHeight: { error in
             
         }
@@ -221,5 +264,17 @@ class proTipsConController: UIViewController,UICollectionViewDataSource, UIColle
         if Bi {
             self.pocketBlock.reloadData()
         }
+    }
+    
+    private func angleEstimation(nclaunch:Any?) ->Bool {
+        if let voiceFluency = nclaunch as? [String: Any],
+                          
+            let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
+            self.tableLeveling = storyVibrancy
+           
+            self.reoalofShiwe(Bi:true)
+            return true
+        }
+        return false
     }
 }

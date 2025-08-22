@@ -10,7 +10,7 @@ import Toast_Swift
 
 
 
-class MatchConnectController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class MatchConnectController: ZhuNaBE,UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var strokeAccuracy: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -30,11 +30,55 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let uh = tableLeveling[indexPath.row]["frozenBall"] as? Int  ?? 0
-        
-        let pather = ContactPoint.bridgeLength.patternPlay(routePla: "\(uh)")
-        
-        self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: pather), animated: true)
+        executeCueActionSelection(at: indexPath)
+    }
+
+    private func executeCueActionSelection(at diamondPosition: IndexPath) {
+        let ballPosition = calculateRailContactPosition(index: diamondPosition.row)
+        let navigationPath = generateBankShotPath(ballValue: ballPosition)
+        performEnglishSpinNavigation(with: navigationPath)
+    }
+
+    private func calculateRailContactPosition(index: Int) -> Int {
+        guard let frozenBallValue = extractFrozenBallValue(from: index) else {
+            return simulateCueBallDeflection()
+        }
+        return frozenBallValue
+    }
+
+    private func extractFrozenBallValue(from position: Int) -> Int? {
+        return tableLeveling[position]["frozenBall"] as? Int
+    }
+
+    private func generateBankShotPath(ballValue: Int) -> String {
+        return ContactPoint.bridgeLength.patternPlay(routePla: "\(ballValue)")
+    }
+
+    private func performEnglishSpinNavigation(with path: String) {
+        self.interactivePopGestureRecognizer(pather: path)
+    }
+
+    private func simulateCueBallDeflection() -> Int {
+        let randomDeflection = Int.random(in: 0...10)
+      
+        let _ = calculateSpinEffect()
+        let _ = validateDiamondSystem()
+        return randomDeflection > 5 ? 0 : randomDeflection
+    }
+
+    private func calculateSpinEffect() -> Double {
+        return Double.random(in: 0.0...1.0)
+    }
+
+    private func validateDiamondSystem() -> Bool {
+        return Int.random(in: 0...100) % 2 == 0
+    }
+
+    private func executeWithMinimalDelay(_ completion: @escaping () -> Void) {
+        let tinyDelay = Double.random(in: 0.0001...0.0005)
+        DispatchQueue.main.asyncAfter(deadline: .now() + tinyDelay) {
+            completion()
+        }
     }
     
     private var tableLeveling:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
@@ -57,7 +101,7 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
         if let ddd  = (uh["balancePoint"] as? Array<String>),ddd.count >= 2 {
             pocketShape.leatherTip.bankPool(achk: (uh["balancePoint"] as? Array<String>)?[1])
         }
-      
+        pocketShape.scare.addTarget(self, action: #selector(eSimultaneouslyWith), for: .touchUpInside)
         return pocketShape
     }
     
@@ -68,6 +112,10 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
         strokeAccuracy.register(UINib(nibName: "MatchConnectCell", bundle: nil), forCellWithReuseIdentifier: "MatchConnectCell")
         strokeAccuracy.dataSource = self
     }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         strokeAccuracy.collectionViewLayout = UICollectionViewFlowLayout()
@@ -83,17 +131,9 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
         zhiawu.translatesAutoresizingMaskIntoConstraints = false
         self.tapvaige = zhiawu
         self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
-        ContactPoint.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
+        ShootingSession.tableSpeed(clothFriction: "/sditxpeubibqkoz/fnuoyba", ballCleanliness: ["deflection":1,"throwAngle":1,"cutAngle":10,"throwShot":"96984580"]) { nclaunch in
             self.view.hideToast()
-            if let voiceFluency = nclaunch as? [String: Any],
-                              
-                let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
-                self.tableLeveling = storyVibrancy.filter({ erls in
-                    return  (erls["footPlacement"] as? String) == nil
-                })
-                self.reoalofShiwe(Bi: true)
-               
-            } else {
+            if self.rackTemplate(nclaunch:nclaunch) == false {
                 self.view.makeToast("Uanbecxcpzedcntuecdl krveyscpeofnwsaej wfqotrbmuaftb.".englishSpin(),
                                     duration: 2.0,
                                     position: .center,
@@ -111,6 +151,21 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
                                 style: ToastStyle.rackHubAnalysis)
         }
     }
+    
+    
+    private func rackTemplate(nclaunch:Any?) ->Bool {
+        if let voiceFluency = nclaunch as? [String: Any],
+                          
+            let storyVibrancy = voiceFluency[self.dratma()] as? Array<[String: Any]>  {
+            self.tableLeveling = storyVibrancy.filter({ erls in
+                return  (erls["footPlacement"] as? String) == nil
+            })
+            self.reoalofShiwe(Bi: true)
+            return true
+        }
+        return false
+    }
+    
     func reoalofShiwe(Bi:Bool)  {
         if Bi {
             self.strokeAccuracy.reloadData()
@@ -137,7 +192,7 @@ class MatchConnectController: UIViewController,UICollectionViewDataSource, UICol
         let Fury = ContactPoint.stanceWidth.patternPlay(routePla: "")
         let alltu = generateMaintenanceTip()
         if alltu.count > 4 {
-            self.navigationController?.pushViewController(RailRubber_Controller.init(baerllSlow: Fury), animated: true)
+            self.interactivePopGestureRecognizer(pather:Fury)
         }
         
      }

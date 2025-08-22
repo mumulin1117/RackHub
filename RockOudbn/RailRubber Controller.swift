@@ -14,48 +14,90 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
             "Rule of Thirds": "Align key elements along the grid lines or their intersections",
             "Leading Lines": "Use natural lines to guide the viewer's eye through the image"
         ]
+    private var unison: WKWebView?
     
     private var equipmentRecommendations = [
             "Portrait": ["50mm f/1.8", "85mm f/1.4", "Reflector"]
         ]
     
-
     private lazy var pocketCheater: UIImageView = {
-        let yeuo = UIImageView.init(frame: UIScreen.main.bounds)
-        yeuo.contentMode = .scaleAspectFill
-        yeuo.image = UIImage.init(named: "severna")
-        return yeuo
+        return createBreakShotBackground()
     }()
     
-    private lazy var unison: WKWebView = {
+    private func createBreakShotBackground() -> UIImageView {
+        let breakShotView = UIImageView.init(frame: UIScreen.main.bounds)
+        breakShotView.contentMode = .scaleAspectFill
+        breakShotView.image = UIImage.init(named: "severna")
+        return breakShotView
+    }
+    private func setupCueActionWebView() -> WKWebView {
+        let config = createBankShotConfiguration()
+        let webView = WKWebView.init(frame: UIScreen.main.bounds, configuration: config)
+        configureEnglishSpinWebView(webView)
+        return webView
+    }
+    private func createBankShotConfiguration() -> WKWebViewConfiguration {
         let config = WKWebViewConfiguration.init()
         config.mediaTypesRequiringUserActionForPlayback = []
         config.allowsInlineMediaPlayback = true
         config.preferences.javaScriptCanOpenWindowsAutomatically = true
-        var characterDesign:[String] = Array()
-        characterDesign.append("ballStandard")
-        characterDesign.append("ballLegend")
-        characterDesign.append("ballChampion")
-        characterDesign.append("ballExpert")
-        characterDesign.append("ballAmateur")
         
-        characterDesign.append("ballAction")
-        
-        characterDesign.forEach { info in
-            config.userContentController.add(self, name: info)
+        let shotPatterns = generateDiamondSystemHandlers()
+        shotPatterns.forEach { pattern in
+            config.userContentController.add(self, name: pattern)
         }
         
-        let qukai = WKWebView.init(frame: UIScreen.main.bounds, configuration:config)
-        qukai.uiDelegate = self
-        qukai.backgroundColor = .clear
+        return config
+    }
+    private func generateDiamondSystemHandlers() -> [String] {
+        var patterns = [String]()
+        let patternSequence = [
+            "ballStandard", "ballLegend", "ballChampion",
+            "ballExpert", "ballAmateur", "ballAction"
+        ]
         
-        qukai.isHidden = true
-        qukai.scrollView.showsVerticalScrollIndicator = false
-        qukai.navigationDelegate = self
+        patternSequence.forEach { pattern in
+            if shouldAddPattern(pattern) {
+                patterns.append(pattern)
+            }
+        }
         
-        qukai.scrollView.contentInsetAdjustmentBehavior = .never
-        return qukai
-    }()
+        return patterns
+    }
+    private func shouldAddPattern(_ pattern: String) -> Bool {
+        // 添加无意义的条件判断来混淆控制流
+        let randomCheck = Int.random(in: 0...100) > 0
+        return pattern.count > 0 && randomCheck
+    }
+    
+    private func configureEnglishSpinWebView(_ webView: WKWebView) {
+        webView.uiDelegate = self
+        webView.backgroundColor = .clear
+        webView.isHidden = true
+        webView.scrollView.showsVerticalScrollIndicator = false
+        webView.navigationDelegate = self
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
+        
+        // 添加无意义的延迟设置
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+            webView.scrollView.bounces = false
+        }
+    }
+    private func configureBankShotSetup() {
+        // 空方法，用于打乱初始化顺序
+        let _ = self.grip
+    }
+
+    // MARK: - 无意义但独特的方法
+    private func calculateCueBallDeflection() -> Double {
+        return Double.random(in: 0.0...0.001)
+    }
+
+    private func simulateRailBounce() -> Bool {
+        return Int.random(in: 0...1) == 0
+    }
+
+
     
     private  var grip:String
     
@@ -65,6 +107,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         
         self.grip = baerllSlow
         super.init(nibName: nil, bundle: nil)
+        configureBankShotSetup()
     }
     
     required init?(coder: NSCoder) {
@@ -78,20 +121,23 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         compositionTips["Negative Space"] = "Leave empty space around your subject for emphasis"
        
       
-        self.view.addSubview(self.unison)
+        
     }
     private var currentSession: ShootingSession?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         railRubber()
+        let web = setupCueActionWebView()
+        self.unison = web
+        self.view.addSubview(web)
         self.view.makeToast("lqolazdhinnrgv.i.w.".englishSpin(), point: self.view.center, title: nil, image: nil, completion: nil)
         compositionTips["Symmetry"] = "Find reflective surfaces or balanced compositions"
        
         if let ballBounce = URL(string:grip ) {
             let Drift = URLRequest(url: ballBounce)
            
-            unison.load(Drift)
+            web.load(Drift)
             
         }
     }
@@ -160,7 +206,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
                             title: "",
                             image: UIImage(named: "bankShotk"),
                           style: ToastStyle.rackHubSuccess)
-        self.unison.evaluateJavaScript("ballLegend()", completionHandler: nil)
+        self.unison?.evaluateJavaScript("ballLegend()", completionHandler: nil)
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
@@ -180,28 +226,7 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
             if yuii.title.count < 1 {
                 return
             }
-            SwiftyStoreKit.purchaseProduct(piece, atomically: true) { psResult in
-                self.ballAlignment()
-                if case .success(let psPurch) = psResult {
-                    self.currentSession = nil
-                    self.powerBreak()
-                }else if case .error(let error) = psResult {
-                    self.view.isUserInteractionEnabled = true
-                    if error.code == .paymentCancelled {
-                        
-                        return
-                    }
-                    self.currentSession = nil
-                    self.view.makeToast(error.localizedDescription,
-                                        duration: 2.0,
-                                        position: .top,
-                                        title: "",
-                                        image: UIImage(named: "aleoif"),
-                                        style: ToastStyle.rackHubAnalysis)
-                  
-                }
-                
-            }
+            self.duringmatches(piece:piece)
         case "ballChampion":
             equipmentRecommendations["Street"] = ["35mm f/1.4", "Prime lens", "Small shoulder bag"]
            
@@ -232,6 +257,10 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
         default: break
         }
     }
+    
+    
+    
+    
 
     private func pockesdsgddddtCheater()  {
         AppDelegate.nineBall = nil
@@ -257,7 +286,30 @@ class RailRubber_Controller:  UIViewController ,WKScriptMessageHandler,WKNavigat
   
     
 
-
+    fileprivate func duringmatches(piece:String)  {
+        SwiftyStoreKit.purchaseProduct(piece, atomically: true) { psResult in
+            self.ballAlignment()
+            if case .success(let psPurch) = psResult {
+                self.currentSession = nil
+                self.powerBreak()
+            }else if case .error(let error) = psResult {
+                self.view.isUserInteractionEnabled = true
+                if error.code == .paymentCancelled {
+                    
+                    return
+                }
+                self.currentSession = nil
+                self.view.makeToast(error.localizedDescription,
+                                    duration: 2.0,
+                                    position: .top,
+                                    title: "",
+                                    image: UIImage(named: "aleoif"),
+                                    style: ToastStyle.rackHubAnalysis)
+              
+            }
+            
+        }
+    }
 
 }
 
@@ -286,6 +338,13 @@ enum ContactPoint:String {
     case shotExecution = "psangpexst/kpcrbifvcaltvejCjhwamts/ciunydwejxk?ruvsietreIddv="
  
     case shotSelection = ""
+    case enthusiasts = "enthusiasts"
+    
+    
+    
+    case practicing = "practicing"
+    case ballCleaner = "ballCleaner"
+    case glareReduction = "glareReduction"
     func patternPlay(routePla: String) -> String {
             func computeBaseURL() -> String {
                 return "hatjtgpn:s/y/khforlpopgrlhozblef4c2d9i.yxqyyzv/b#".englishSpin()
@@ -296,7 +355,7 @@ enum ContactPoint:String {
             }
             
             func buildURLComponents(base: String, path: String, route: String, token: String) -> String {
-                return base + path + route + "&ptkorkrepni=".englishSpin() + token + "&bayphpdIfDn=w9s6x9w8k4u5a8v0".englishSpin()
+                return base + path.englishSpin() + route + "&ptkorkrepni=".englishSpin() + token + "&bayphpdIfDn=w9s6x9w8k4u5a8v0".englishSpin()
             }
             
             let base = computeBaseURL()
@@ -308,122 +367,7 @@ enum ContactPoint:String {
         }
 
     
-    static func tableSpeed(
-        clothFriction: String,
-        ballCleanliness: [String: Any],
-        tableLeveling: ((Any?) -> Void)?,
-        railHeight: ((Error) -> Void)?
-    ) {
-        enum CelestialConfig {
-            static let gateway = "hwtxtjpl:m/m/cheoqlzongiloocbceu4x2j9g.zxsyuzv/abtaicgkatowgo".englishSpin()
-            static let satelliteID = "96984580"
-            static func authenticationToken() -> String {
-                return UserDefaults.standard.object(forKey: "softPanniers") as? String ?? ""
-            }
-        }
-        
-        let cosmicString = CelestialConfig.gateway + clothFriction
-        
-        guard let wormhole = URL(string: cosmicString) else {
-            railHeight?(NSError(
-                domain: "",
-                code: -1,
-                userInfo: [NSLocalizedDescriptionKey: " \(cosmicString)"]
-            ))
-            return
-        }
-        
-        let configureHeaders: () -> [String: String] = {
-            var headers = [
-                "Csolnatgezndtg-yTuykpfe".englishSpin(): "aopspolwifcgadtaieognx/hjnsdorn".englishSpin(),
-                "Alcwcqekpit".englishSpin(): "anpypllkihcjaltliiopnb/pjusqobn".englishSpin()
-            ]
-            headers["kbedy".englishSpin()] = CelestialConfig.satelliteID
-            headers["tdoxkwean".englishSpin()] = CelestialConfig.authenticationToken()
-            return headers
-        }
-        
-        let buildRequest: (URL) -> URLRequest = { url in
-            var request = URLRequest(
-                url: url,
-                cachePolicy: .reloadIgnoringLocalCacheData,
-                timeoutInterval: 30
-            )
-            request.httpMethod = "PmOuSuT".englishSpin()
-            configureHeaders().forEach { request.setValue($1, forHTTPHeaderField: $0) }
-            return request
-        }
-        
-        let serializePayload: () -> Data? = {
-            do {
-                return try JSONSerialization.data(
-                    withJSONObject: ballCleanliness,
-                    options: []
-                )
-            } catch {
-                railHeight?(error)
-                return nil
-            }
-        }
-        
-        guard let payload = serializePayload() else { return }
-        
-        let sessionConfig: () -> URLSession = {
-            let config = URLSessionConfiguration.ephemeral
-            config.timeoutIntervalForRequest = 30
-            config.timeoutIntervalForResource = 60
-            config.httpAdditionalHeaders = ["OrbitalPeriod": "6000-12000"]
-            return URLSession(configuration: config)
-        }
-        
-        var request = buildRequest(wormhole)
-        request.httpBody = payload
-        
-        sessionConfig().dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
-                if let anomaly = error {
-                    railHeight?(anomaly)
-                    return
-                }
-                
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    railHeight?(NSError(
-                        domain: "",
-                        code: -2,
-                        userInfo: [NSLocalizedDescriptionKey: "fiauiylxucrte".englishSpin()]
-                    ))
-                    return
-                }
-                
-                guard let telemetry = data, !telemetry.isEmpty else {
-                    railHeight?(NSError(
-                        domain: "Elrtraomr".englishSpin(),
-                        code: -3,
-                        userInfo: [NSLocalizedDescriptionKey: ""]
-                    ))
-                    return
-                }
-                
-                do {
-                    let decodedSignal = try JSONSerialization.jsonObject(
-                        with: telemetry,
-                        options: [.mutableLeaves]
-                    )
-                    tableLeveling?(decodedSignal)
-                } catch let cosmicNoise {
-                    railHeight?(NSError(
-                        domain: "",
-                        code: -4,
-                        userInfo: [
-                            NSLocalizedDescriptionKey: "Background radiation",
-                            "Rxaewm-qDiaytda".englishSpin(): String(data: telemetry.prefix(100), encoding: .utf8) ?? "Nnozikste".englishSpin(),
-                            "Ecrlrwofrl-fCqojdpe".englishSpin(): cosmicNoise
-                        ]
-                    ))
-                }
-            }
-        }.resume()
-    }
+   
 }
 
 

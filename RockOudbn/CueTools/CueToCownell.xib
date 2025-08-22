@@ -41,6 +41,15 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hag-Ln-Ge5">
+                        <rect key="frame" x="253" y="322" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="99s-jH-gJZ"/>
+                            <constraint firstAttribute="width" constant="30" id="hoG-18-5g9"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="cushionBounce"/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -51,13 +60,16 @@
                 <constraint firstItem="he1-qG-ePH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Ha8-S6-xt3"/>
                 <constraint firstItem="IgT-wh-vgS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ihn-qv-hLe"/>
                 <constraint firstAttribute="trailing" secondItem="Oda-o6-d8o" secondAttribute="trailing" constant="11" id="Q0B-Kt-vj7"/>
+                <constraint firstAttribute="trailing" secondItem="hag-Ln-Ge5" secondAttribute="trailing" constant="11" id="WLG-1Z-aJA"/>
                 <constraint firstItem="IgT-wh-vgS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iEo-2d-4fQ"/>
+                <constraint firstAttribute="bottom" secondItem="hag-Ln-Ge5" secondAttribute="bottom" constant="33" id="mx3-m0-HA3"/>
                 <constraint firstAttribute="trailing" secondItem="IgT-wh-vgS" secondAttribute="trailing" id="xR1-wf-y8r"/>
             </constraints>
             <size key="customSize" width="294" height="385"/>
             <connections>
                 <outlet property="chalkTip" destination="he1-qG-ePH" id="Q0U-iF-9JR"/>
                 <outlet property="ferrule" destination="IgT-wh-vgS" id="JjN-VG-acl"/>
+                <outlet property="scare" destination="hag-Ln-Ge5" id="3IT-qI-JZo"/>
                 <outlet property="shaftWrap" destination="Oda-o6-d8o" id="X6E-xF-81k"/>
             </connections>
             <point key="canvasLocation" x="320.61068702290078" y="138.38028169014086"/>
@@ -65,5 +77,6 @@
     </objects>
     <resources>
         <image name="Coisploser" width="12" height="12"/>
+        <image name="cushionBounce" width="24" height="24"/>
     </resources>
 </document>
