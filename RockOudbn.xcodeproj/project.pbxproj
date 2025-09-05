@@ -221,8 +221,10 @@
 				INFOPLIST_FILE = RockOudbn/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RackHub;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Enhance your pool skills by capturing shots for analysis—snap trick shots, save game highlights, or share your progress with the community.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Find the ideal practice spot. We use your location to recommend highly-rated pool halls with great lighting and equipment, so you can focus on perfecting your break.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Communicate with fellow players during matches—discuss strategies, celebrate great plays, or get real-time feedback from peers.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Share your favorite pool moments! Upload saved shots, review your progress, or showcase your best games with others.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Improve your game faster. This helps us analyze which coaching tips and techniques are most effective for players like you, so we can refine your learning experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -233,7 +235,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.biuomi.rackh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -261,8 +263,10 @@
 				INFOPLIST_FILE = RockOudbn/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = RackHub;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Enhance your pool skills by capturing shots for analysis—snap trick shots, save game highlights, or share your progress with the community.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Find the ideal practice spot. We use your location to recommend highly-rated pool halls with great lighting and equipment, so you can focus on perfecting your break.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Communicate with fellow players during matches—discuss strategies, celebrate great plays, or get real-time feedback from peers.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Share your favorite pool moments! Upload saved shots, review your progress, or showcase your best games with others.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Improve your game faster. This helps us analyze which coaching tips and techniques are most effective for players like you, so we can refine your learning experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -273,7 +277,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.biuomi.rackh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

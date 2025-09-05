@@ -9,4 +9,6 @@ target 'RockOudbn' do
 pod "SwiftyStoreKit"
 pod 'IQKeyboardManager'
 pod 'Toast-Swift'
+pod 'Adjust', '~> 5.1.1'
+pod 'FBSDKCoreKit'
 end

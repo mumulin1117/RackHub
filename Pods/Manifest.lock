@@ -1,24 +1,47 @@
 PODS:
+  - Adjust (5.1.1):
+    - Adjust/Adjust (= 5.1.1)
+  - Adjust/Adjust (5.1.1):
+    - AdjustSignature (= 3.35.2)
+  - AdjustSignature (3.35.2)
+  - FBAEMKit (18.0.0):
+    - FBSDKCoreKit_Basics (= 18.0.0)
+  - FBSDKCoreKit (18.0.0):
+    - FBAEMKit (= 18.0.0)
+    - FBSDKCoreKit_Basics (= 18.0.0)
+  - FBSDKCoreKit_Basics (18.0.0)
   - IQKeyboardManager (6.5.19)
   - SwiftyStoreKit (0.16.1)
   - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
+  - Adjust (~> 5.1.1)
+  - FBSDKCoreKit
   - IQKeyboardManager
   - SwiftyStoreKit
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
+    - Adjust
+    - AdjustSignature
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
     - IQKeyboardManager
     - SwiftyStoreKit
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  Adjust: 5f5e998cf1446d44d93f91ec8b7b7dd40eaa922d
+  AdjustSignature: 23b9e5d4adcadffc303bb6b410fde617dd88504f
+  FBAEMKit: e34530df538b8eb8aeb53c35867715ba6c63ef0c
+  FBSDKCoreKit: d3f479a69127acebb1c6aad91c1a33907bcf6c2f
+  FBSDKCoreKit_Basics: 017b6dc2a1862024815a8229e75661e627ac1e29
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 3c4850a0e6978665972104f97941df6e379dcbfe
+PODFILE CHECKSUM: 5576ab84ae2043c9817a2760ca2141211b2291aa
 
 COCOAPODS: 1.16.2
