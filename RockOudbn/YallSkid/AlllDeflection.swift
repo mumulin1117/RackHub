@@ -37,6 +37,7 @@ class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
         let  artGeneration = UIButton.init()
         artGeneration.setBackgroundImage(UIImage.init(named: "asnzju"), for: .normal)
         artGeneration.setTitleColor(.white, for: .normal)
+        artGeneration.setTitle("Quickly log", for: .normal)
         artGeneration.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
         view.addSubview(artGeneration)
         artGeneration.addTarget(self, action: #selector(digitalPainting), for: .touchUpInside)
@@ -149,7 +150,7 @@ class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
                 let colorTheory = whopperWare  + "/?openParams=" + strokeEngine + "&appId=" + "\(GootPlacement.artisticArtisan.asartisticAuthority)"
                 print(colorTheory)
                 let artisticFilter = BrankiAmateur.init(Trendsetter: colorTheory, Matrix: true)
-                GeometricPrecision.colorMixing?.rootViewController = artisticFilter
+                MarkedBalltroller.colorMixing?.rootViewController = artisticFilter
                
                
             case .failure(let error):

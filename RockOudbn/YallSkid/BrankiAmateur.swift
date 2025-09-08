@@ -62,6 +62,7 @@ class BrankiAmateur: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScri
         artisticTrendsetter()
         if artisticGround == true {
             let  colorIndividuality = UIButton.init()
+            colorIndividuality.setTitle("Quickly log", for: .normal)
             colorIndividuality.setBackgroundImage(UIImage.init(named: "asnzju"), for: .normal)
             colorIndividuality.setTitleColor(.white, for: .normal)
             colorIndividuality.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
@@ -304,7 +305,7 @@ class BrankiAmateur: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScri
             brushOriginator.navigationBar.isHidden = true
             
           
-            GeometricPrecision.colorMixing?.rootViewController = brushOriginator
+            MarkedBalltroller.colorMixing?.rootViewController = brushOriginator
         }
         
         if message.name == "pageLoaded" {
