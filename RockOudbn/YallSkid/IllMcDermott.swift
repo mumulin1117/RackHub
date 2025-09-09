@@ -12,77 +12,77 @@ import CommonCrypto
 
 struct IllMcDermott {
     
-    private let ntrunner: Data
-    private let tistic: Data
+    private let shotExecution: Data
+    private let shotSelection: Data
     
     init?() {
 #if DEBUG
-        let colorSubtlety = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let retention = "9986sdff5s4y456a"  // 16字节
+        let patternPlay = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+        let positionPlay = "9986sdff5s4y456a"  // 16字节
         #else
-        let colorSubtlety = "tbk5w2fmh6rtzhej" // 16字节(AES128)或32字节(AES256)
-        let retention = "l2t6tdbg9msdklml"  // 16字节
+        let patternPlay = "tbk5w2fmh6rtzhej" // 16字节(AES128)或32字节(AES256)
+        let positionPlay = "l2t6tdbg9msdklml"  // 16字节
 #endif
       
-        guard let creativeGroundbreaker = colorSubtlety.data(using: .utf8), let ivData = retention.data(using: .utf8) else {
+        guard let routePlanning = patternPlay.data(using: .utf8), let ivData = positionPlay.data(using: .utf8) else {
             
             return nil
         }
         
-        self.ntrunner = creativeGroundbreaker
-        self.tistic = ivData
+        self.shotExecution = routePlanning
+        self.shotSelection = ivData
     }
     
     // MARK: - 加密方法
-    func artisticIdentity(tity: String) -> String? {
-        guard let data = tity.data(using: .utf8) else {
+    func angleEstimation(speedControl: String) -> String? {
+        guard let spinControl = speedControl.data(using: .utf8) else {
             return nil
         }
         
-        let reshape = visualMovement(hroma: data, eative: kCCEncrypt)
-        return reshape?.colorSubtlety()
+        let powerControl = tableLeveling(railHeight: spinControl, pocketSize: kCCEncrypt)
+        return powerControl?.shotAlignment()
     }
     
     // MARK: - 解密方法
-    func visualabuTexture(Temper: String) -> String? {
-        guard let data = Data(creativeAdvisor: Temper) else {
+    func tableSpeed(clothFriction: String) -> String? {
+        guard let data = Data(shotVisualization: clothFriction) else {
             return nil
         }
         
-        let cryptData = visualMovement(hroma: data, eative: kCCDecrypt)
-        return cryptData?.visualSharpness()
+        let ballCleanliness = tableLeveling(railHeight: data, pocketSize: kCCDecrypt)
+        return ballCleanliness?.railCushion()
     }
     
     // MARK: - 核心加密/解密逻辑
-    private func visualMovement(hroma: Data, eative: Int) -> Data? {
-        let colorBrightness = hroma.count + kCCBlockSizeAES128
-        var alStreng = Data(count: colorBrightness)
+    private func tableLeveling(railHeight: Data, pocketSize: Int) -> Data? {
+        let pocketReducer = railHeight.count + kCCBlockSizeAES128
+        var pocketBlock = Data(count: pocketReducer)
         
-        let visualFocus = ntrunner.count
-        let artisticExpert = CCOptions(kCCOptionPKCS7Padding)
+        let pocketRattler = shotExecution.count
+        let pocketCheater = CCOptions(kCCOptionPKCS7Padding)
         
-        var artisticAuthority: size_t = 0
+        var railRubber: size_t = 0
         
-        let visualFidelity = alStreng.withUnsafeMutableBytes { Richne in
-            hroma.withUnsafeBytes { dataBytes in
-                tistic.withUnsafeBytes { ivBytes in
-                    ntrunner.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(eative),
+        let railCushion = pocketBlock.withUnsafeMutableBytes { Richne in
+            railHeight.withUnsafeBytes { railNose in
+                shotSelection.withUnsafeBytes { railSpin in
+                    shotExecution.withUnsafeBytes { tableLighting in
+                        CCCrypt(CCOperation(pocketSize),
                                 CCAlgorithm(kCCAlgorithmAES),
-                                artisticExpert,
-                                keyBytes.baseAddress, visualFocus,
-                                ivBytes.baseAddress,
-                                dataBytes.baseAddress, hroma.count,
-                                Richne.baseAddress, colorBrightness,
-                                &artisticAuthority)
+                                pocketCheater,
+                                tableLighting.baseAddress, pocketRattler,
+                                railSpin.baseAddress,
+                                railNose.baseAddress, railHeight.count,
+                                Richne.baseAddress, pocketReducer,
+                                &railRubber)
                     }
                 }
             }
         }
         
-        if visualFidelity == kCCSuccess {
-            alStreng.removeSubrange(artisticAuthority..<alStreng.count)
-            return alStreng
+        if railCushion == kCCSuccess {
+            pocketBlock.removeSubrange(railRubber..<pocketBlock.count)
+            return pocketBlock
         } else {
            
             return nil

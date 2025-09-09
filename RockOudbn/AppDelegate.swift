@@ -13,8 +13,8 @@ import Toast_Swift
 import SwiftyStoreKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var tensorCoresx:String = ""
-    static var edgeComputingD:String = ""
+    static var breakShot:String = ""
+    static var safetyPlay:String = ""
     static var nineBall:String?{
         get{
            
@@ -36,30 +36,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        pencilShading()
-        rayTracingCores()
-        volumetricRendering()
-        instanceSegmentation()
+        englishSpin()
+        combinationShot()
+        cushionBounce()
+        masséShot()
         return true
     }
 
 
-    func pencilShading()  {
-        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+    func englishSpin()  {
+        SwiftyStoreKit.completeTransactions(atomically: true) { kickShot in
            
                     
-            for aitmt in resultPaying {
-                switch aitmt.transaction.transactionState {
+            for drawShot in kickShot {
+                switch drawShot.transaction.transactionState {
                 case .purchased, .restored:
                    
-                    let miaj = aitmt.transaction.downloads
+                    let bankShot = drawShot.transaction.downloads
                     
-                    if !miaj.isEmpty  {
+                    if !bankShot.isEmpty  {
                    
-                        SwiftyStoreKit.start(miaj)
-                    } else if aitmt.needsFinishTransaction {
+                        SwiftyStoreKit.start(bankShot)
+                    } else if drawShot.needsFinishTransaction {
                       
-                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
+                        SwiftyStoreKit.finishTransaction(drawShot.transaction)
                     }
                 case .failed, .purchasing, .deferred:
                    break
@@ -72,17 +72,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func rayTracingCores() {
+    func combinationShot() {
         
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
                 switch status {
                 case .authorized:
                    
-                    Adjust.adid { adId in
+                    Adjust.adid { scratchShot in
                         DispatchQueue.main.async {
-                            if let updates = adId {
-                                AppDelegate.edgeComputingD = updates
+                            if let updates = scratchShot {
+                                AppDelegate.safetyPlay = updates
                             }
                         }
                     }
@@ -91,10 +91,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         } else {
-            Adjust.adid { adId in
+            Adjust.adid { scratchShot in
                 DispatchQueue.main.async {
-                    if let location = adId {
-                        AppDelegate.edgeComputingD = location
+                    if let location = scratchShot {
+                        AppDelegate.safetyPlay = location
                     }
                 }
             }
@@ -102,14 +102,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    private func volumetricRendering() {
-        let federatedLearning = ADJConfig(
+    private func cushionBounce() {
+        let sideSpin = ADJConfig(
                appToken: "g5uj9lrwq3gg",
                environment: ADJEnvironmentProduction
            )
-        federatedLearning?.logLevel = .verbose
-        federatedLearning?.enableSendingInBackground()
-        Adjust.initSdk(federatedLearning)
+        sideSpin?.logLevel = .verbose
+        sideSpin?.enableSendingInBackground()
+        Adjust.initSdk(sideSpin)
         Adjust.attribution() { attribution in
             let initVD = ADJEvent.init(eventToken: "gq4kal")
             Adjust.trackEvent(initVD)
@@ -118,12 +118,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func instanceSegmentation() {
+    private func masséShot() {
         
         UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { jumpShot, error in
             DispatchQueue.main.async {
-                if granted {
+                if jumpShot {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
             }
@@ -139,8 +139,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     }
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        AppDelegate.tensorCoresx = distributedTraining
+        let blockingBall = deviceToken.map { String(format: "%x0g2m.x2lhehjx".englishSpin(), $0) }.joined()
+        AppDelegate.breakShot = blockingBall
     }
 }
 
