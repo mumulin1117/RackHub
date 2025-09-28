@@ -49,12 +49,27 @@ class BrankiAmateur: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScri
     }
  
     private func ballMomentum()  {
-        let creativeForerunner = UIImage(named: "squirtAngle")
         
-        let brushForerunner = UIImageView(image:creativeForerunner )
+        let brushForerunner = UIImageView(image:UIImage(named: "handfoot") )
         brushForerunner.frame = self.view.frame
         brushForerunner.contentMode = .scaleAspectFill
         view.addSubview(brushForerunner)
+        
+        let layerunner = UIImageView(image:UIImage(named: "handfire") )
+        layerunner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(layerunner)
+        NSLayoutConstraint.activate([
+           
+            layerunner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            
+            layerunner.heightAnchor.constraint(equalToConstant: 139),
+            
+            layerunner.widthAnchor.constraint(equalToConstant: 276),
+        
+            layerunner.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                              constant: -self.view.safeAreaInsets.bottom - 65 - 52 - 55)
+        ])
+        
     }
    
     override func viewDidLoad() {

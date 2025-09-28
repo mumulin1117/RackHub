@@ -22,9 +22,24 @@ class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
     private  var ballCluster:NSNumber = 0.0
     private func ballSeparation()  {
      
-        let ballHop = UIImageView(image:UIImage(named: "squirtAngle") )
+        let ballHop = UIImageView(image:UIImage(named: "handfoot") )
         ballHop.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         view.addSubview(ballHop)
+        
+        let layerunner = UIImageView(image:UIImage(named: "handfire") )
+        layerunner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(layerunner)
+        NSLayoutConstraint.activate([
+           
+            layerunner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            
+            layerunner.heightAnchor.constraint(equalToConstant: 139),
+            
+            layerunner.widthAnchor.constraint(equalToConstant: 276),
+        
+            layerunner.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                              constant: -self.view.safeAreaInsets.bottom - 65 - 52 - 55)
+        ])
     }
     
     override func viewDidLoad() {
