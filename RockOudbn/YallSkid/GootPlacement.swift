@@ -35,6 +35,8 @@ class GootPlacement: NSObject {
         nineBall.httpMethod = "PuOdSiT".englishSpin()
         nineBall.httpBody = eightBall
         
+        let breakShot =   UserDefaults.standard.value(forKey: "breakShot") as? String ?? ""//.setValue(updates, forKey: "safetyPlay")
+      
         
         // 设置请求头
         nineBall.setValue("aipzpelhincbactiiroknd/hjbsroin".englishSpin(), forHTTPHeaderField: "Cfofnftqeznfto-dTuydpte".englishSpin())
@@ -43,7 +45,7 @@ class GootPlacement: NSObject {
         nineBall.setValue(SwerveSlik.hitConsistency(), forHTTPHeaderField: "ddeivditcrecNfo".englishSpin())
         nineBall.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "lxainhgruyaggre".englishSpin())
         nineBall.setValue(UserDefaults.standard.string(forKey: "McDermott") ?? "", forHTTPHeaderField: "lwowgnianyTfoxkkeon".englishSpin())
-        nineBall.setValue(AppDelegate.breakShot, forHTTPHeaderField: "pqubsthtTmovkheen".englishSpin())
+        nineBall.setValue(breakShot, forHTTPHeaderField: "pqubsthtTmovkheen".englishSpin())
         
         // 4. 创建URLSession任务
         let tenBall = URLSession.shared.dataTask(with: nineBall) { data, response, error in

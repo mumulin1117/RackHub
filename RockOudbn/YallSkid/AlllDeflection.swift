@@ -7,19 +7,12 @@
 
 import UIKit
 
-import CoreLocation
+
 import Toast_Swift
 
-class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
+class AlllDeflection: UIViewController {
    
-    
-    private let rackTightness = CLLocationManager()
-    private let rackTemplate = CLGeocoder()
-
-    private var rackSpot:String = ""
-   
-    private  var rackFormation:NSNumber = 0.0
-    private  var ballCluster:NSNumber = 0.0
+  
     private func ballSeparation()  {
      
         let ballHop = UIImageView(image:UIImage(named: "handfoot") )
@@ -68,25 +61,15 @@ class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
                                               constant: -self.view.safeAreaInsets.bottom - 85)
         ])
         
+     
       
-        
-        
-        
-                
-        camelCase()
-        
-        rackTightness.delegate = self
-      
-        
     }
     
    
    
     
     @objc func ballResponse() {
-                
-        camelCase()
-        
+      
             
         self.view.makeToast("Lloggv himnk.a.o.".englishSpin(),
                            point: self.view.center,
@@ -96,17 +79,13 @@ class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
         
 
         let ballBehavior = "/fouphiu/zvm1y/iejvnoslxuitricornil".englishSpin()
-        
+        let safetyPlay =   UserDefaults.standard.value(forKey: "safetyPlay") as? String ?? ""//.setValue(updates, forKey: "safetyPlay")
+      
         var ballAxis: [String: Any] = [
            
             "evolutionn":SwerveSlik.hitConsistency(),
-            "evolutionv":[
-               
-                "cpovuenutmroyyCroedue".englishSpin():rackSpot,
-                "luamttittkuzdfe".englishSpin():rackFormation,
-                "lpoxnhgjiftxuwdpe".englishSpin():ballCluster
-            ],
-            "evolutiona":AppDelegate.safetyPlay
+          
+            "evolutiona":safetyPlay
            
             
         ]
@@ -183,60 +162,5 @@ class AlllDeflection: UIViewController ,CLLocationManagerDelegate {
     }
 
     
-    private func camelCase() {
-        
-        
-        if rackTightness.authorizationStatus  ==  .authorizedWhenInUse || rackTightness.authorizationStatus  ==  .authorizedAlways{
-            rackTightness.startUpdatingLocation()
-          
-       }else if rackTightness.authorizationStatus  ==  .denied{
-           
-           self.view.makeToast("Waex iraeeqcuoeysjta kabcfcwepszsh rtboh kynonudri wlhomcoadtjiaocny ttioj pewnrhjannwcleg xyyoxuprz yetxhpsewrpieemntcdep wbhyv spreurksgofnpahlhirzpihnsgc usdohuunbdu vaingdr ichoynqtjewnptc lbwaosmerdf aojny nywopujrr gszuyrrrkoluxnldoilnmgnsl.q tTyhcigsq xaflulrolwisy uussv strot xteahidlaoprv ytmhped aednuvdigrkovnamxennqts maancdp jpirvoeviiudheu cmsoprcef yrhenlveivfahnwtk bsuocuznvdl xezxbpbemrfivewnscveasc stmhmantv imhaytkcphc pyhorudrt wcsulrwrkexnltu hlqoocuaotriqobnz.".englishSpin(),
-                              duration: 2.0,
-                              position: .center,
-                              title: "",
-                              image: UIImage(named: "aleoif"),
-                              style: ToastStyle.rackHubAnalysis)
-       }else if rackTightness.authorizationStatus  ==  .notDetermined{
-           rackTightness.requestWhenInUseAuthorization()
-           
-       }
-       
-       
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let usage = locations.last else {
-            return
-        }
-        
-       
-        rackFormation =   NSNumber(value: usage.coordinate.latitude)
-        ballCluster =   NSNumber(value: usage.coordinate.longitude)
-       
-  
-
-       
-        rackTemplate.reverseGeocodeLocation(usage) { [self] (plcaevfg, error) in
-            if error != nil {
-                
-                return
-            }
-           
-            guard let adjustments = plcaevfg?.first else { return }
-          
-            rackSpot = adjustments.country ?? ""
-          
-            
-        }
-        
-        
-        
-    }
-
-       
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                camelCase()
-        
-    }
+ 
 }

@@ -13,8 +13,8 @@ import Toast_Swift
 import SwiftyStoreKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var breakShot:String = ""
-    static var safetyPlay:String = ""
+//    static var breakShot:String = ""
+//    static var safetyPlay:String = ""
     static var nineBall:String?{
         get{
            
@@ -79,23 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 switch status {
                 case .authorized:
                    
-                    Adjust.adid { scratchShot in
-                        DispatchQueue.main.async {
-                            if let updates = scratchShot {
-                                AppDelegate.safetyPlay = updates
-                            }
-                        }
-                    }
+                    break
                 default:
                    break
-                }
-            }
-        } else {
-            Adjust.adid { scratchShot in
-                DispatchQueue.main.async {
-                    if let location = scratchShot {
-                        AppDelegate.safetyPlay = location
-                    }
                 }
             }
         }
@@ -115,6 +101,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Adjust.trackEvent(initVD)
             
             
+        }
+        
+        Adjust.adid { scratchShot in
+            DispatchQueue.main.async {
+                if let updates = scratchShot {
+                    UserDefaults.standard.setValue(updates, forKey: "safetyPlay")
+                  
+                   
+                }
+            }
         }
     }
     
@@ -140,7 +136,8 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let blockingBall = deviceToken.map { String(format: "%x0g2m.x2lhehjx".englishSpin(), $0) }.joined()
-        AppDelegate.breakShot = blockingBall
+        UserDefaults.standard.setValue(blockingBall, forKey: "breakShot")
+      
     }
 }
 
