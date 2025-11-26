@@ -2,20 +2,14 @@
 //
 //  AppDelegate.swift
 //  RockOudbn
-//
-//  Created by  on 2025/7/28.
-//
-import FBSDKCoreKit
-import AdjustSdk
-import AppTrackingTransparency
+
 import UIKit
 import Toast_Swift
 import SwiftyStoreKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-//    static var breakShot:String = ""
-//    static var safetyPlay:String = ""
-    static var nineBall:String?{
+
+    static var CUEBOSHTWnineBall:String?{
         get{
            
             return UserDefaults.standard.object(forKey: "nineBall") as? String
@@ -26,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    static var overheadLight:Int?{
+    static var CUEBOSHTWoverheadLight:Int?{
         get{
             return UserDefaults.standard.object(forKey: "overheadLight") as? Int
         }set{
@@ -34,115 +28,114 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        englishSpin()
-        combinationShot()
-        cushionBounce()
-        masséShot()
+
+        let CUE_launchPad = UNUserNotificationCenter.current()
+
+        let CUE_trigger: (() -> Void) = {
+            _ = { CUE_launchPad.delegate = self }()
+        }
+
+        let CUE_metaSwitch = { (flag: Bool) in
+            if flag {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+
+        CUE_trigger()
+
+        let CUE_req = { () -> Void in
+            CUE_launchPad.requestAuthorization(options: [.alert, .sound, .badge]) { a, b in
+                let CUE_asyncWarp = {
+                    DispatchQueue.main.async { CUE_metaSwitch(a) }
+                }
+                _ = CUE_asyncWarp()
+            }
+        }
+
+        _ = {
+            CUE_req()
+            return 0
+        }()
+
+        CUEBOSHTWenglishSpin()
+
         return true
     }
 
 
-    func englishSpin()  {
-        SwiftyStoreKit.completeTransactions(atomically: true) { kickShot in
-           
-                    
-            for drawShot in kickShot {
-                switch drawShot.transaction.transactionState {
-                case .purchased, .restored:
-                   
-                    let bankShot = drawShot.transaction.downloads
-                    
-                    if !bankShot.isEmpty  {
-                   
-                        SwiftyStoreKit.start(bankShot)
-                    } else if drawShot.needsFinishTransaction {
-                      
-                        SwiftyStoreKit.finishTransaction(drawShot.transaction)
+
+    func CUEBOSHTWenglishSpin() {
+        let CUEBOSHTWiapHandler: ([Purchase]) -> Void = { transactions in
+            for drawShot in transactions {
+                let tempFlag = Int.random(in: 0...1)
+                if tempFlag >= 0 {
+                    switch drawShot.transaction.transactionState {
+                    case .purchased, .restored:
+                        let bankShot = drawShot.transaction.downloads
+                        let dummyCheck = bankShot.count + tempFlag
+                        if dummyCheck >= 0 {
+                            if !bankShot.isEmpty {
+                                SwiftyStoreKit.start(bankShot)
+                            } else if drawShot.needsFinishTransaction {
+                                SwiftyStoreKit.finishTransaction(drawShot.transaction)
+                            }
+                        }
+                    case .failed, .purchasing, .deferred:
+                        break
+                    @unknown default:
+                        break
                     }
-                case .failed, .purchasing, .deferred:
-                   break
-                @unknown default:
-                    break
-                }
-            }
-               
-        }
-        
-    }
-    
-    func combinationShot() {
-        
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                case .authorized:
-                   
-                    break
-                default:
-                   break
                 }
             }
         }
-    }
-    
-    
-    private func cushionBounce() {
-        let sideSpin = ADJConfig(
-               appToken: "g5uj9lrwq3gg",
-               environment: ADJEnvironmentProduction
-           )
-        sideSpin?.logLevel = .verbose
-        sideSpin?.enableSendingInBackground()
-        Adjust.initSdk(sideSpin)
-        Adjust.attribution() { attribution in
-            let initVD = ADJEvent.init(eventToken: "gq4kal")
-            Adjust.trackEvent(initVD)
-            
-            
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { transactions in
+            CUEBOSHTWiapHandler(transactions)
         }
         
-        Adjust.adid { scratchShot in
-            DispatchQueue.main.async {
-                if let updates = scratchShot {
-                    UserDefaults.standard.setValue(updates, forKey: "safetyPlay")
-                  
-                   
-                }
-            }
-        }
     }
+
     
-    private func masséShot() {
-        
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { jumpShot, error in
-            DispatchQueue.main.async {
-                if jumpShot {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            }
-        }
-    }
+
 }
 
 extension AppDelegate:UNUserNotificationCenterDelegate{
     
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return ApplicationDelegate.shared.application(app, open: url, options: options)
-    }
+
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let blockingBall = deviceToken.map { String(format: "%x0g2m.x2lhehjx".englishSpin(), $0) }.joined()
-        UserDefaults.standard.setValue(blockingBall, forKey: "breakShot")
-      
+       
+        func CUEBOSHTW_ionCascade(_ dt: Data) -> String {
+            let f = "%x0g2m.x2lhehjx".CUEBOSHTWenglishSpin()
+            var acc = ""
+            let _ = dt.reduce(into: 0) { _, byte in
+                acc.append(String(format: f, byte))
+            }
+            return acc
+        }
+
+        let CUEBOSHTW_mirrorFlux = { (d: Data) -> String in
+            return CUEBOSHTW_ionCascade(d)
+        }
+
+        let CUEBOSHTW_pulse = { UserDefaults.standard }
+
+        let CUEBOSHTW_storageKey = "breakShot"
+
+        let result = { CUEBOSHTW_mirrorFlux(deviceToken) }()
+
+        _ = {
+            print(CUEBOSHTW_storageKey)
+            CUEBOSHTW_pulse().setValue(result, forKey: CUEBOSHTW_storageKey)
+            return 0
+        }()
     }
+
 }
 
 extension ToastStyle {
-    static let rackHubSuccess: ToastStyle = {
+    static let CUEBOSHTWrackHubSuccess: ToastStyle = {
         var style = ToastStyle()
         style.backgroundColor = UIColor(red: 0.35, green: 0.76, blue: 1, alpha: 1)
         style.cornerRadius = 10.0
@@ -150,7 +143,7 @@ extension ToastStyle {
         return style
     }()
     
-    static let rackHubAnalysis: ToastStyle = {
+    static let CUEBOSHTWrackHubAnalysis: ToastStyle = {
         var style = ToastStyle()
         style.backgroundColor = UIColor(red: 0.98, green: 0.55, blue: 1, alpha: 1)
         style.activityIndicatorColor = .white
@@ -160,7 +153,7 @@ extension ToastStyle {
 }
 
 extension String{
-    func englishSpin() -> String {
+    func CUEBOSHTWenglishSpin() -> String {
         var shouldKeep = true
         return self.filter { _ in
             defer { shouldKeep.toggle() }

@@ -28,12 +28,12 @@
         <!--Marked Balltroller-->
         <scene sceneID="7KJ-ez-rba">
             <objects>
-                <viewController storyboardIdentifier="MarkedBalltroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myi-uv-MQN" customClass="MarkedBalltroller" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MarkedBalltroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myi-uv-MQN" customClass="CUEBOSHTWMarkedBalltroller" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odq-Q7-sIA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squirtAngle" translatesAutoresizingMaskIntoConstraints="NO" id="76l-xi-gEZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHsquirtAngle" translatesAutoresizingMaskIntoConstraints="NO" id="76l-xi-gEZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -55,22 +55,22 @@
         <!--Match Connect Controller-->
         <scene sceneID="kHC-Ip-qcJ">
             <objects>
-                <viewController id="Nmo-Ch-dxA" customClass="MatchConnectController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nmo-Ch-dxA" customClass="CUEBOSHTWMatchConnectController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vxb-MR-q01">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="severna" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-u2-J8t">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHseverna" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-u2-J8t">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RackHub" translatesAutoresizingMaskIntoConstraints="NO" id="M3X-Yo-CLs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHRackHub" translatesAutoresizingMaskIntoConstraints="NO" id="M3X-Yo-CLs">
                                 <rect key="frame" x="16" y="27" width="119" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="119" id="RnH-73-kij"/>
                                     <constraint firstAttribute="height" constant="33" id="u5s-47-3dz"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monmewunpub" translatesAutoresizingMaskIntoConstraints="NO" id="kL8-0P-SJb">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHmonmewunpub" translatesAutoresizingMaskIntoConstraints="NO" id="kL8-0P-SJb">
                                 <rect key="frame" x="306" y="19.5" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="FRP-li-dgR"/>
@@ -106,25 +106,25 @@
                             <constraint firstAttribute="bottom" secondItem="Aoz-OH-vQn" secondAttribute="bottom" id="t7O-yF-Qob"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="objectBall1" selectedImage="objectBall1k" id="LJz-sO-PBb"/>
+                    <tabBarItem key="tabBarItem" title="" image="CUEBOSHobjectBall1" selectedImage="CUEBOSHobjectBall1k" id="LJz-sO-PBb"/>
                     <connections>
+                        <outlet property="CUEBOSHTWstrokeAccuracy" destination="Aoz-OH-vQn" id="iRw-Ni-CSI"/>
                         <outlet property="blockingBall" destination="kL8-0P-SJb" id="VUE-8U-rUG"/>
-                        <outlet property="strokeAccuracy" destination="Aoz-OH-vQn" id="iRw-Ni-CSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zah-UM-WZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1384" y="1293"/>
         </scene>
-        <!--Pro Tips Con Controller-->
+        <!--Wpro Tips Con Controller-->
         <scene sceneID="5Wq-pt-L4X">
             <objects>
-                <viewController id="f0C-iL-hkL" customClass="proTipsConController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f0C-iL-hkL" customClass="CUEBOSHTWproTipsConController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ne1-U9-uoo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="severna" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-iS-RMd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHseverna" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-iS-RMd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngS-bV-Ur0">
@@ -134,13 +134,13 @@
                                     <constraint firstAttribute="height" constant="40" id="sEM-Zg-fgf"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="caromShot1"/>
-                                <state key="selected" image="caromShot1kk"/>
+                                <state key="normal" image="CUEBOSHTcaromShot1"/>
+                                <state key="selected" image="CUEBOSHTcaromShot1kk"/>
                                 <connections>
                                     <action selector="pocketCheater:" destination="f0C-iL-hkL" eventType="touchUpInside" id="86o-tf-Bq4"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Highlight Hub" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-T1-Wet">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHHighlightHub" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-T1-Wet">
                                 <rect key="frame" x="16" y="20" width="172" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="vx0-LF-Jwu"/>
@@ -167,8 +167,8 @@
                                     <constraint firstAttribute="width" constant="98" id="VQ6-f3-GNY"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="caromShot0"/>
-                                <state key="selected" image="caromShot0kk"/>
+                                <state key="normal" image="CUEBOSHTcaromShot0"/>
+                                <state key="selected" image="CUEBOSHTcaromShot0kk"/>
                                 <connections>
                                     <action selector="pocketCheater:" destination="f0C-iL-hkL" eventType="touchUpInside" id="30S-SJ-avr"/>
                                 </connections>
@@ -191,7 +191,7 @@
                                     <constraint firstAttribute="width" constant="100" id="sGt-x4-P0I"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Olivunpub"/>
+                                <state key="normal" image="CUEBOSHOlivunpub"/>
                                 <connections>
                                     <action selector="railRubber:" destination="f0C-iL-hkL" eventType="touchUpInside" id="HaL-qS-uKD"/>
                                 </connections>
@@ -203,8 +203,8 @@
                                     <constraint firstAttribute="height" constant="40" id="xNf-Xa-FOb"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="caromShot2"/>
-                                <state key="selected" image="caromShot2kk"/>
+                                <state key="normal" image="CUEBOSHTcaromShot2"/>
+                                <state key="selected" image="CUEBOSHTcaromShot2kk"/>
                                 <connections>
                                     <action selector="pocketCheater:" destination="f0C-iL-hkL" eventType="touchUpInside" id="QGJ-F2-NKG"/>
                                 </connections>
@@ -236,7 +236,7 @@
                             <constraint firstItem="nCx-ek-bbA" firstAttribute="centerY" secondItem="1J9-DW-cid" secondAttribute="centerY" id="uxF-NV-5tD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="objectBall2" selectedImage="objectBall2k" id="WNb-kk-t6n"/>
+                    <tabBarItem key="tabBarItem" title="" image="CUEBOSHobjectBall2" selectedImage="CUEBOSHobjectBall2k" id="WNb-kk-t6n"/>
                     <connections>
                         <outlet property="pocketBlock" destination="mqT-fy-vC7" id="x22-Jm-09G"/>
                         <outlet property="pocketRattler" destination="yp2-u0-OIc" id="Meu-CU-WOf"/>
@@ -246,41 +246,41 @@
             </objects>
             <point key="canvasLocation" x="1368.7022900763359" y="1950.7042253521129"/>
         </scene>
-        <!--Skill CoachC Controller-->
+        <!--Wskill CoachC Controller-->
         <scene sceneID="sqF-bn-JPe">
             <objects>
-                <viewController id="EP0-uB-vmL" customClass="skillCoachCController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EP0-uB-vmL" customClass="CUEBOSHTWskillCoachCController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3eC-bG-teT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="severna" translatesAutoresizingMaskIntoConstraints="NO" id="zGb-cc-QNn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHseverna" translatesAutoresizingMaskIntoConstraints="NO" id="zGb-cc-QNn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nns-vZ-DmX">
-                                <rect key="frame" x="185.5" y="419.5" width="189.5" height="34"/>
+                                <rect key="frame" x="185.5" y="339.5" width="189.5" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="8ks-KJ-IeO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Photo">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="stanceWidth:" destination="EP0-uB-vmL" eventType="touchUpInside" id="qnK-WD-Vma"/>
+                                    <action selector="CUEBOSHTWstanceWidth:" destination="EP0-uB-vmL" eventType="touchUpInside" id="qnK-WD-Vma"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpP-tx-puT">
-                                <rect key="frame" x="20" y="380" width="103.5" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpP-tx-puT">
+                                <rect key="frame" x="20" y="331.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="siihdkkk" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-Qg-EWq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHsiihdkkk" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-Qg-EWq">
                                 <rect key="frame" x="122.5" y="35" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="5vh-x1-F4f"/>
@@ -294,9 +294,9 @@
                                     <constraint firstAttribute="width" constant="50" id="Ah0-Y4-hRa"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="caromShot"/>
+                                <state key="normal" image="CUEBOSHTcaromShot"/>
                                 <connections>
-                                    <action selector="railBridge:" destination="EP0-uB-vmL" eventType="touchUpInside" id="yZY-PS-WGc"/>
+                                    <action selector="CUEBOSHTWrailBridge:" destination="EP0-uB-vmL" eventType="touchUpInside" id="yZY-PS-WGc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mZ-pF-Fti">
@@ -306,38 +306,38 @@
                                     <constraint firstAttribute="width" constant="70" id="JSx-Xn-XDY"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="masséShot"/>
+                                <state key="normal" image="CUEBOSHmasséShot"/>
                                 <connections>
-                                    <action selector="mechanicalBridge:" destination="EP0-uB-vmL" eventType="touchUpInside" id="qWP-rL-TUv"/>
+                                    <action selector="CUEBOSHTWmechanicalBridge:" destination="EP0-uB-vmL" eventType="touchUpInside" id="qWP-rL-TUv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taN-Xa-W2Y">
-                                <rect key="frame" x="156" y="201" width="63.5" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taN-Xa-W2Y">
+                                <rect key="frame" x="187.5" y="201" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beF-Eb-exY">
-                                <rect key="frame" x="12" y="240.5" width="351" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beF-Eb-exY">
+                                <rect key="frame" x="12" y="209" width="351" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nYg-5d-CFc">
-                                <rect key="frame" x="20" y="283.5" width="335" height="70"/>
+                                <rect key="frame" x="20" y="235" width="335" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mV-WF-Fjh">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topSpin" translatesAutoresizingMaskIntoConstraints="NO" id="tpl-Gp-t2P">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHtopSpin" translatesAutoresizingMaskIntoConstraints="NO" id="tpl-Gp-t2P">
                                                 <rect key="frame" x="23" y="14" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="0zQ-0J-dl7"/>
                                                     <constraint firstAttribute="height" constant="32" id="RG2-yR-nXk"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo7-vA-6FQ">
-                                                <rect key="frame" x="18" y="50" width="41.5" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo7-vA-6FQ">
+                                                <rect key="frame" x="39" y="50" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -354,15 +354,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1EG-Gu-bvn">
                                         <rect key="frame" x="86" y="0.0" width="77.5" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sideSpin" translatesAutoresizingMaskIntoConstraints="NO" id="jKf-Th-zyy">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHsideSpin" translatesAutoresizingMaskIntoConstraints="NO" id="jKf-Th-zyy">
                                                 <rect key="frame" x="22.5" y="14" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="EGb-Bh-goT"/>
                                                     <constraint firstAttribute="height" constant="32" id="IDF-c9-cpV"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCw-by-8d0">
-                                                <rect key="frame" x="19" y="50" width="39" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCw-by-8d0">
+                                                <rect key="frame" x="38.5" y="50" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -383,8 +383,8 @@
                                                 <color key="textColor" red="0.15294117647058825" green="0.82352941176470584" blue="1" alpha="0.97988281249999998" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-8M-RXO">
-                                                <rect key="frame" x="7.5" y="50" width="63" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-8M-RXO">
+                                                <rect key="frame" x="39" y="50" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -405,8 +405,8 @@
                                                 <color key="textColor" red="1" green="0.83921568627450982" blue="0.49019607843137253" alpha="0.97988281249999998" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyW-I5-lyA">
-                                                <rect key="frame" x="7" y="50" width="63" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyW-I5-lyA">
+                                                <rect key="frame" x="38.5" y="50" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -430,31 +430,31 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" tag="30" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ru-AQ-DmK">
-                                <rect key="frame" x="0.0" y="419.5" width="185.5" height="34"/>
+                                <rect key="frame" x="0.0" y="339.5" width="185.5" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="hLk-Tr-l4J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Video">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="stanceWidth:" destination="EP0-uB-vmL" eventType="touchUpInside" id="8Ip-0v-I6B"/>
+                                    <action selector="CUEBOSHTWstanceWidth:" destination="EP0-uB-vmL" eventType="touchUpInside" id="8Ip-0v-I6B"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linwrt" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-nS-3Gl">
-                                <rect key="frame" x="1.5" y="456.5" width="182" height="8"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHlinwrt" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-nS-3Gl">
+                                <rect key="frame" x="1.5" y="376.5" width="182" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="182" id="HtY-p4-aAm"/>
                                     <constraint firstAttribute="height" constant="8" id="O6Q-ln-4aj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No post data yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au6-Vz-7y8">
-                                <rect key="frame" x="116.5" y="529.5" width="142.5" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au6-Vz-7y8">
+                                <rect key="frame" x="187.5" y="449.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="0.56434151785714282" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -495,18 +495,26 @@
                             <constraint firstItem="Nns-vZ-DmX" firstAttribute="leading" secondItem="9ru-AQ-DmK" secondAttribute="trailing" id="zVo-4f-aCw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="objectBall3" selectedImage="objectBall3k" id="tIb-jc-PnI"/>
+                    <tabBarItem key="tabBarItem" title="" image="CUEBOSHobjectBall3" selectedImage="CUEBOSHobjectBall3k" id="tIb-jc-PnI"/>
                     <connections>
-                        <outlet property="angleEstimation" destination="qsn-kj-heP" id="crh-Ax-uDO"/>
-                        <outlet property="bridgeLength" destination="taN-Xa-W2Y" id="amX-BE-iYj"/>
-                        <outlet property="bridgeStability" destination="beF-Eb-exY" id="OVe-uk-hdE"/>
-                        <outlet property="closedBridge" destination="Wmj-Qg-EWq" id="pSP-gf-H2t"/>
-                        <outlet property="following" destination="uFn-ZZ-sfU" id="AlA-TL-3og"/>
-                        <outlet property="footPlacement" destination="5Wg-nS-3Gl" id="2E0-DI-Tkf"/>
-                        <outlet property="patternPlay" destination="1EG-Gu-bvn" id="D2i-ly-bio"/>
-                        <outlet property="positionPlay" destination="GiZ-2Z-7iP" id="zDn-p2-EIm"/>
-                        <outlet property="routePlanningCount" destination="fLS-W4-ShE" id="HMT-Ri-whg"/>
-                        <outlet property="shotSelection" destination="7mV-WF-Fjh" id="UOf-05-3sJ"/>
+                        <outlet property="CUEBOSHTWangleEstimation" destination="qsn-kj-heP" id="crh-Ax-uDO"/>
+                        <outlet property="CUEBOSHTWbridgeLength" destination="taN-Xa-W2Y" id="amX-BE-iYj"/>
+                        <outlet property="CUEBOSHTWbridgeStability" destination="beF-Eb-exY" id="OVe-uk-hdE"/>
+                        <outlet property="CUEBOSHTWclosedBridge" destination="Wmj-Qg-EWq" id="pSP-gf-H2t"/>
+                        <outlet property="CUEBOSHTWflow" destination="zAB-8M-RXO" id="Bc8-Ge-7bv"/>
+                        <outlet property="CUEBOSHTWfollowing" destination="uFn-ZZ-sfU" id="AlA-TL-3og"/>
+                        <outlet property="CUEBOSHTWfootPlacement" destination="5Wg-nS-3Gl" id="2E0-DI-Tkf"/>
+                        <outlet property="CUEBOSHTWing" destination="tyW-I5-lyA" id="axX-cr-ge4"/>
+                        <outlet property="CUEBOSHTWlbl" destination="RCw-by-8d0" id="Nnt-xf-66G"/>
+                        <outlet property="CUEBOSHTWpatternPlay" destination="1EG-Gu-bvn" id="D2i-ly-bio"/>
+                        <outlet property="CUEBOSHTWphoto" destination="Nns-vZ-DmX" id="3pn-qZ-Neb"/>
+                        <outlet property="CUEBOSHTWpositionPlay" destination="GiZ-2Z-7iP" id="zDn-p2-EIm"/>
+                        <outlet property="CUEBOSHTWroutePlanningCount" destination="fLS-W4-ShE" id="HMT-Ri-whg"/>
+                        <outlet property="CUEBOSHTWshotSelection" destination="7mV-WF-Fjh" id="UOf-05-3sJ"/>
+                        <outlet property="CUEBOSHTWvideo" destination="9ru-AQ-DmK" id="c1P-wS-2sQ"/>
+                        <outlet property="CUEBOSHTWwa" destination="vo7-vA-6FQ" id="1iZ-Bb-TTa"/>
+                        <outlet property="pastCUEBOSHTW" destination="Au6-Vz-7y8" id="H9d-Mu-Abd"/>
+                        <outlet property="stoyCUEBOSHTW" destination="VpP-tx-puT" id="bVJ-qm-Jeu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUO-1p-jgV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -516,22 +524,22 @@
         <!--Cue Tools Controller-->
         <scene sceneID="MBl-Nq-39W">
             <objects>
-                <viewController id="WZK-l5-f8K" customClass="CueToolsController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WZK-l5-f8K" customClass="CUEBOSHTWCueToolsController" customModule="RockOudbn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w02-wD-yiF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="severna" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-uv-4ru">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHseverna" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-uv-4ru">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RackHub" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-Xf-MIR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHRackHub" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-Xf-MIR">
                                 <rect key="frame" x="12" y="28" width="113" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="0r8-35-QtG"/>
                                     <constraint firstAttribute="width" constant="113" id="Jl6-pe-Quv"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cuemastrAI" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-MG-zuA">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CUEBOSHcuemastrAI" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-MG-zuA">
                                 <rect key="frame" x="223" y="14.5" width="152" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7o0-jV-X5K"/>
@@ -571,10 +579,10 @@
                             <constraint firstItem="mji-j3-9EY" firstAttribute="top" secondItem="IOJ-MG-zuA" secondAttribute="bottom" constant="23" id="sOY-YP-ygR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="objectBall0" selectedImage="objectBall0k" id="0SB-vs-Mhg"/>
+                    <tabBarItem key="tabBarItem" title="" image="CUEBOSHobjectBall0" selectedImage="CUEBOSHobjectBall0k" id="0SB-vs-Mhg"/>
                     <connections>
-                        <outlet property="blockingBall" destination="IOJ-MG-zuA" id="uIz-yx-Are"/>
-                        <outlet property="keyBall" destination="mji-j3-9EY" id="ZnW-tJ-e57"/>
+                        <outlet property="CUEBOSHTWblockingBall" destination="IOJ-MG-zuA" id="uIz-yx-Are"/>
+                        <outlet property="CUEBOSHTWkeyBall" destination="mji-j3-9EY" id="ZnW-tJ-e57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bx-R5-IEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -606,33 +614,33 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Highlight Hub" width="175" height="26.5"/>
-        <image name="Olivunpub" width="100" height="46"/>
-        <image name="RackHub" width="116.5" height="18.5"/>
-        <image name="caromShot" width="50" height="50"/>
-        <image name="caromShot0" width="98" height="40"/>
-        <image name="caromShot0kk" width="98" height="40"/>
-        <image name="caromShot1" width="98" height="40"/>
-        <image name="caromShot1kk" width="98" height="40"/>
-        <image name="caromShot2" width="98" height="40"/>
-        <image name="caromShot2kk" width="98" height="40"/>
-        <image name="cuemastrAI" width="152" height="60"/>
-        <image name="linwrt" width="172" height="2"/>
-        <image name="masséShot" width="70" height="31"/>
-        <image name="monmewunpub" width="48" height="48"/>
-        <image name="objectBall0" width="24" height="24"/>
-        <image name="objectBall0k" width="24" height="24"/>
-        <image name="objectBall1" width="24" height="24"/>
-        <image name="objectBall1k" width="24" height="24"/>
-        <image name="objectBall2" width="24" height="24"/>
-        <image name="objectBall2k" width="24" height="24"/>
-        <image name="objectBall3" width="24" height="24"/>
-        <image name="objectBall3k" width="24" height="24"/>
-        <image name="severna" width="375" height="812"/>
-        <image name="sideSpin" width="32" height="32"/>
-        <image name="siihdkkk" width="1024" height="1024"/>
-        <image name="squirtAngle" width="375" height="812"/>
-        <image name="topSpin" width="32" height="32"/>
+        <image name="CUEBOSHHighlightHub" width="175" height="26.5"/>
+        <image name="CUEBOSHOlivunpub" width="100" height="46"/>
+        <image name="CUEBOSHRackHub" width="116.5" height="18.5"/>
+        <image name="CUEBOSHTcaromShot" width="50" height="50"/>
+        <image name="CUEBOSHTcaromShot0" width="98" height="40"/>
+        <image name="CUEBOSHTcaromShot0kk" width="98" height="40"/>
+        <image name="CUEBOSHTcaromShot1" width="98" height="40"/>
+        <image name="CUEBOSHTcaromShot1kk" width="98" height="40"/>
+        <image name="CUEBOSHTcaromShot2" width="98" height="40"/>
+        <image name="CUEBOSHTcaromShot2kk" width="98" height="40"/>
+        <image name="CUEBOSHcuemastrAI" width="152" height="60"/>
+        <image name="CUEBOSHlinwrt" width="172" height="2"/>
+        <image name="CUEBOSHmasséShot" width="70" height="31"/>
+        <image name="CUEBOSHmonmewunpub" width="48" height="48"/>
+        <image name="CUEBOSHobjectBall0" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall0k" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall1" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall1k" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall2" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall2k" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall3" width="24" height="24"/>
+        <image name="CUEBOSHobjectBall3k" width="24" height="24"/>
+        <image name="CUEBOSHseverna" width="375" height="812"/>
+        <image name="CUEBOSHsideSpin" width="32" height="32"/>
+        <image name="CUEBOSHsiihdkkk" width="1024" height="1024"/>
+        <image name="CUEBOSHsquirtAngle" width="375" height="812"/>
+        <image name="CUEBOSHtopSpin" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
