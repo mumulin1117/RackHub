@@ -193,11 +193,7 @@ class CUEBOSHTWBrankiAmateur: UIViewController ,WKNavigationDelegate, WKUIDelega
 
         func CUEBOSHTWshowInitialToast() {
             let messagePool = ["Lloggv himnk.a.o.", "Lloggv himnk.a.o."].randomElement()!
-            self.view.makeToast(messagePool.CUEBOSHTWenglishSpin(),
-                                point: self.view.center,
-                                title: nil,
-                                image: nil,
-                                completion: nil)
+            self.view.makeToastActivity(self.view.center)
         }
 
         if Bool.random() {
@@ -269,7 +265,8 @@ class CUEBOSHTWBrankiAmateur: UIViewController ,WKNavigationDelegate, WKUIDelega
         }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         CUEBOSHTWballContact?.isHidden = false
-        self.view.hideToast()
+       
+        self.view.hideToastActivity()
     }
     func topPerformer() -> RackHubChallengeResult? {
             let allResults = results.values.flatMap { $0 }
@@ -386,7 +383,7 @@ class CUEBOSHTWBrankiAmateur: UIViewController ,WKNavigationDelegate, WKUIDelega
                             
                         }else{
                             self.view.hideToastActivity()
-                            self.view.makeToast("Payment cancelled",
+                            self.view.makeToast("Payment cancelled".CUEBOSHTWenglishSpin(),
                                                 duration: 2.0,
                                                 position: .center,
                                                 title: "",

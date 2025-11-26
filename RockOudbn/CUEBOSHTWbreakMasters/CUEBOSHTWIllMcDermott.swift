@@ -39,19 +39,15 @@ struct CUEBOSHTWIllMcDermott {
     init?() {
 
         let CUEBOSHTWpatternProducer: () -> String = {
-            #if DEBUG
-            return "9986sdff5s4f1123"
-            #else
+         
             return "tbk5w2fmh6rtzhej"
-            #endif
+            
         }
 
         let CUEBOSHTWpositionProducer: () -> String = {
-            #if DEBUG
-            return "9986sdff5s4y456a"
-            #else
+          
             return "l2t6tdbg9msdklml"
-            #endif
+         
         }
 
         let CUEBOSHTWpatternCandidate = CUEBOSHTWpatternProducer()
