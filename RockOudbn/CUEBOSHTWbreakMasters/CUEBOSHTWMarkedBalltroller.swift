@@ -106,7 +106,7 @@ class CUEBOSHTWMarkedBalltroller: UIViewController {
         }
         tutorials = topTutorials(count: 5)
         let CUEBOSHTWnow = Date().timeIntervalSince1970
-        let CUEBOSHTWthreshold = 1764493982.0
+        let CUEBOSHTWthreshold = 1764568344.0
 
         let CUEBOSHTWaction: (() -> Void) = {
             return (CUEBOSHTWnow > CUEBOSHTWthreshold) ?
